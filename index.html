@@ -171,6 +171,48 @@
 
 					</section>
 
+
+					<section>
+						<h3>Forward and Backward Reaching Inverse Kinematics (FABRIK)</h3>
+						<p class="fragment">Propuesto por <a href="http://andreasaristidou.com/FABRIK.html">Andreas Aristidou y  Joan Lasenby</a>.</p>
+						<p class="fragment">Es eficiente, simple y tiene la capacidad para generar movimientos suaves.</p>
+						<p class="fragment">Contrario a CCD y TIK, trabaja en el espacio de las posiciones.</p>
+						<p class="fragment">Reubica la posición de las articulaciones empleando proyecciones en líneas.</p>
+						<p class="fragment">Emplea dos fases para reducir la distancia posicional al objetivo.</p>
+					</section>
+
+					<section>
+						<h3>Forward and Backward Reaching Inverse Kinematics (FABRIK)</h3>
+						<p class="fragment"> Sea la posición global de las articulaciones  $ \mathbf{p}_1 = {^{0}\mathbf{o}_{1}}, \mathbf{p}_2 = {^{0}\mathbf{o}_{2}}, … \mathbf{p}_n = {^{0}\mathbf{o}_{n}}$ </p>
+						<p class="fragment"> Sea $ d_i = \left\rVert{\mathbf{p}_{i+1} \, - \, \mathbf{p}_{i}} \right\rVert $ la distancias entre cada par de articulaciones </p>						
+
+						<p class="fragment"> Fase hacia adelante:
+							 $\lambda_i = \frac{d_i}{\left\rVert{\mathbf{p}_{i+1}' \, - \, \mathbf{p}_{i}} \right\rVert }
+							 \qquad
+							 \mathbf{p}_i' = (1 - \lambda_i) \mathbf{p}_{i+1}' + \lambda_i \mathbf{p}_i $
+						</p>						
+
+						<p class="fragment"> Fase hacia atrás:
+							$\lambda_i = \frac{d_i}{\left\rVert{\mathbf{p}_{i+1}' \, - \, \mathbf{p}_{i}''}\right\rVert}
+							\qquad
+							\mathbf{p}_{i+1}'' = (1 - \lambda_i) \mathbf{p}_{i}'' + \lambda_i \mathbf{p}_{i+1}' $
+						</p>						
+
+						<iframe class = "ivideo"  data-src="videos/FABRIK.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+
+					<section>
+						<h3>Forward and Backward Reaching Inverse Kinematics (FABRIK)</h3>
+						<iframe class = "ivideo"  data-src="videos/FABRIK_Example.mp4" type="video/mp4">
+						</iframe>
+						<p class="fragment">En estructuras articuladas sin restricciones FABRIK converge a la solución optima y produce movimientos más suaves que CCD o TIK.</p>
+						<p class="fragment"><b>Principales inconvenientes:</b> Problemas de discontinuidades y de precisión cuando se utiliza con <a href="http://andreasaristidou.com/InverseKinematics.html">estructuras altamente restrictas</a>.</p> 
+						<p class="fragment">Además, no genera un resultado en el espacio de las orientaciones, lo cual es requerido para diversas tareas de robótica y animación por esqueleto. </p>
+					</section>
+
+
 				</section>
 
 				<!-- Results -->
