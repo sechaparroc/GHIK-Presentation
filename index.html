@@ -7,7 +7,7 @@
 		<title>GHIK</title>
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/serif.css" id="theme">
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 		<!-- Custom Presentation Styles -->
@@ -41,11 +41,11 @@
 			<div class="slides">
 				<!-- Theme selection -->
 				<section id="themes">
-					<h2>Themes</h2>
+					<h2>Apariencia</h2>
 						<p>
-							Set your presentation theme: <br>
+							Seleccione la apariencia de las diapositivas: <br>
 							<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/black.css'); return false;">Black (default)</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/black.css'); return false;">Black</a> -
 							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/white.css'); return false;">White</a> -
 							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/league.css'); return false;">League</a> -
 							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/sky.css'); return false;">Sky</a> -
@@ -74,38 +74,88 @@
 				<!-- Intro -->
 				<section>
 					<section><h1>Contextualización</h1></section>
-					<section><h1>Qué</h1></section>
 					<section>
 						<p class="fragment"><b>Área de investigación:</b> Computación grafica</p>
 						<p class="fragment"><b>Línea de investigación:</b> Animación por computador</p>
-						<p class="fragment">¿Cómo "dotar de vida" a un personaje animado?</p>
+						<p class="fragment">¿Cómo describir el movimiento de un personaje animado?</p>
 						<p class="fragment">Una aproximación bastante empleada consiste en la animación de esqueleto</p>
 					</section>
-					<section><h1>Cómo</h1></section>
 					<section>
 						<h3>Estructura articulada - (Estructura de esqueleto)</h3>
+						<br>
 						<ul>
-							<li>Conjunto de cuerpos rígidos (huesos) conectados mediante articulaciones.</li>
-							<li>Representación jerárquica.</li>
+							<li class="fragment">Conjunto de cuerpos rígidos (huesos) conectados mediante articulaciones.</li>
+							<br>
+							<li class="fragment">Las articulaciones tienen capacidad de movimiento (usualmente rotacional).</li>
+							<br>
+							<li class="fragment">La estructura se organiza de forma jerárquica.</li>
+							<br>
+							<li class="fragment">Efectores finales: partes especiales de la estructura que dependen de la 
+								posición / orientación de sus articulaciones ancestras.</li>
+							<br>
 						</ul>
-
-						conjunto de cuerpos rígidos conocidos como huesos, que se conectan entre ellos mediante articulaciones, las cuales tienen capacidad de movimiento						
-						* Set of rigid multibody system called bones (or links) attached by joints. A skeleton usually is represented as a hierarchical structure. <!-- .element: class="fragment" data-fragment-index="1"--> 
-						* Joints are parametrized by Degrees of Fredom (DOF). <!-- .element: class="fragment" data-fragment-index="2"--> 
-						
-						* An end effector $\mathbf{s}$ is a point of interest that depends on joint configurations: $ \mathbf{s} = f(\mathbf{ \theta }) $ <!-- .element: class="fragment" data-fragment-index="3"-->
-						* <!-- .element: class="fragment" data-fragment-index="4"--> Skeleton is used to define or modify movements (e.g. [Keyframe animation](https://www.utdallas.edu/atec/midori/Handouts/keyframing.htm), [Procedural animation](https://www.alanzucconi.com/2017/04/17/procedural-animations/), [MoCap data](https://en.wikipedia.org/wiki/Motion_capture)). 
-						
-
-						<p class="fragment"><b>Cinemática:</b> Descripción del movimiento sin considerar sus causas</p>
 					</section>
+
+					<section>
+						<figure class="fragment" data-fragment-index="4">
+							<img width = "80%" data-src='fig/1Skeleton.jpg'/>
+						</figure>
+					</section>
+
+					<section>
+						<h3>Articulaciones</h3>
+						<ul>
+							<li class="fragment">Dada una cadena cinemática $K = (J_1, J_2, ..., J_n)$ compuesta por n articulaciones.</li>
+							<li class="fragment"> $ J_i = ( ^{i-1}q_i, ^{i-1}o_i) $ describe una transformación rígida relativa a su padre $J_{i-1}$.</li>
+							<li class="fragment">La traslación se representa como el vector $^{i-1}o_i \in \mathbb{R}^3$</li>
+							<li class="fragment">La rotación de $ \theta $ radianes alrededor del vector unitario $ {\mathbf{\hat{u}}=(\hat{u}_{x},\hat{u}_{y},\hat{u}_{z})\in\mathbb{R}^{3}} $ se representa como el cuaternión unitario: 
+								<p style="text-align: center;"> $^{i-1}q_i = (w, \mathbf{v})= (w , x, y, z) = \left(cos\left(\frac{\theta}{2}\right), \mathbf{\hat{u}_x} sin\left(\frac{\theta}{2}\right), \mathbf{\hat{u}_y} sin\left(\frac{\theta}{2}\right), \mathbf{\hat{u}_z} sin\left(\frac{\theta}{2}\right)\right)  \in \mathbf{S}^3$ </p>
+							</li>
+							<li class="fragment"> Se define a la multiplicación entre dos cuaterniones como: 
+								<p style="text-align: center;"> $\mathbf{q_1} \mathbf{q_2} = (w_1 w_2 - \mathbf{v}_1 \cdot \mathbf{v}_2, w_1 \mathbf{v}_2 + w_2 \mathbf{v}_1 + \mathbf{v}_1 \times \mathbf{v}_2)$ </p> </li>			
+							<li class="fragment">El resultado de aplicar la rotación $\mathbf{^{i-1}q_i}$ sobre  el vector $\mathbf{x} $ se obtiene mediante la siguiente expresión: 
+								<p style="text-align: center;"> $\mathbf{x}' = \mathbf{^{i-1}q_i} \, \mathbf{x} \, \mathbf{^{i-1}q_i}^*$, donde $ \mathbf{^{i-1}q_i}^* =  (w, -x, -y, -z)$  </p>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Articulaciones</h3>
+						<p class="fragment"> Podemos realizar transformaciónes entre sistemas de coordenadas utilizando las siguientes ecuaciones:
+							$ {^{i-1}\mathbf{x}} = \; {\mathbf{q}_{i}} \; {^{i}\mathbf{x}} \; {\mathbf{q}_{i}}^{*}  \; + \; {\mathbf{o}_{i}} \qquad \qquad
+							 {^{i}\mathbf{x}} = \; {\mathbf{q}_{i}^{*}} \; ({^{i-1}\mathbf{x}}  - {\mathbf{o}_i}) \: {\mathbf{q}_{i}} $
+						</p>
+						<div class="fragment">
+							<iframe class = "ivideo"  data-src="videos/Joints.mp4" type="video/mp4"></iframe>							
+						</div>
+					</section>
+
+										
+
+					<section>
+						<h3>Articulación</h3>
+						<div style="text-align: justify-all; float: left; width: 50%">
+							<br>
+							<ul>
+								<li class="fragment">Conjunto de cuerpos rígidos (huesos) conectados mediante articulaciones.</li>
+								<li class="fragment">Las articulaciones tienen capacidad de movimiento (usualmente rotacional).</li>
+								<li class="fragment">La estructura se organiza de forma jerárquica.</li>
+							</ul>	
+						</div>
+						<div style="text-align: justify-all; float : left; width : 50%" class=embed-container >
+							<figure class="fragment" data-fragment-index="4">
+								<img width = "80%" data-src='fig/1Skeleton.jpg'/>
+							</figure>
+						</div>
+					</section>
+
 
 
 					<section>
 						<h3>Para qué</h3>
 						<p class="fragment"></p>
 						<p class="fragment"><b>Línea de investigación:</b> Animación por computador</p>
-						<p class="fragment">¿Cómo "dotar de vida" a un personaje animado?</p>
+						<p class="fragment">¿Cómo describir el movimiento de un personaje animado?</p>
 						<p class="fragment">Una aproximación bastante empleada consiste en la animación de esqueleto</p>
 					</section>
 
