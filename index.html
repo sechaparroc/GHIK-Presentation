@@ -22,6 +22,10 @@
 				width : 80vw;
 			}
 
+			.dia{
+				height : 80vh;
+				width : 80vw;
+			}
 			.ivideo{
 				height : 60vh;
 				width : 80vw;
@@ -89,9 +93,9 @@
 					<section>
 						<br>
 						<div class = "justify">
-							<p class="fragment"><b>Área de investigación:</b> Computación grafica</p>
+							<p class="fragment"><b>Área de investigación:</b> Computación gráfica</p>
 							<p class="fragment"><b>Línea de investigación:</b> Animación por computador</p>
-							<p class="fragment"><b>Animación de esqueleto: </b>¿Cómo describir el movimiento de un personaje animado?</p>
+							<p class="fragment">¿Cómo describir el movimiento de un personaje animado? - <b>Animación de esqueleto </b></p>
 							<p class="fragment"><b>Aplicaciones: </b> </p>
 							<ul style="padding-left: 5%;">
 								<li class="fragment">Edición y creación de movimiento en software de animación.</li>
@@ -102,19 +106,6 @@
 
 						</div>
 					</section>
-					<!--
-					<section>
-						<h3>Estructura articulada - (Estructura de esqueleto)</h3>
-						<br>
-
-						<ul class = "justify">
-							<li class="fragment">Conjunto de cuerpos rígidos (huesos) conectados mediante articulaciones.</li>
-							<li class="fragment">Las articulaciones tienen capacidad de movimiento (usualmente rotacional).</li>
-							<li class="fragment">La estructura se organiza de forma jerárquica.</li>
-							<li class="fragment">Efectores finales: partes especiales de la estructura cuya posición / orientación depende de sus articulaciones ancestras.</li>
-						</ul>
-					</section>
-					-->		
 
 					<section>
 						<h3>Estructura articulada - (Estructura de esqueleto)</h3>
@@ -123,150 +114,80 @@
 						</figure>
 					</section>
 
-					<!-- 
-					<section>
-						<h3>Articulaciones</h3>
-						<p class="fragment"> Podemos realizar transformaciónes entre sistemas de coordenadas utilizando las siguientes ecuaciones:
-							$ {^{i-1}\mathbf{x}} = \; {\mathbf{q}_{i}} \; {^{i}\mathbf{x}} \; {\mathbf{q}_{i}}^{*}  \; + \; {\mathbf{o}_{i}} \qquad \qquad
-							 {^{i}\mathbf{x}} = \; {\mathbf{q}_{i}^{*}} \; ({^{i-1}\mathbf{x}}  - {\mathbf{o}_i}) \: {\mathbf{q}_{i}} $
-						</p>
-						<div class="fragment">
-							<iframe class = "ivideo"  data-src="videos/Joints.mp4" type="video/mp4"></iframe>							
-						</div>
-					</section>
 
-					<section>
-						<h3>Articulación</h3>
-						<div style="text-align: justify; float: left; width: 50%">
-							<br>
-							<ul>
-								<li class="fragment">Conjunto de cuerpos rígidos (huesos) conectados mediante articulaciones.</li>
-								<li class="fragment">Las articulaciones tienen capacidad de movimiento (usualmente rotacional).</li>
-								<li class="fragment">La estructura se organiza de forma jerárquica.</li>
-							</ul>	
-						</div>
-						<div style="text-align: justify-all; float : left; width : 50%" class=embed-container >
-							<figure class="fragment" data-fragment-index="4">
-								<img width = "80%" data-src='fig/1Skeleton.jpg'/>
-							</figure>
-						</div>
-					</section>
-
-
-
-					<section>
-						<h3>Para qué</h3>
-						<p class="fragment"></p>
-						<p class="fragment"><b>Línea de investigación:</b> Animación por computador</p>
-						<p class="fragment">¿Cómo describir el movimiento de un personaje animado?</p>
-						<p class="fragment">Una aproximación bastante empleada consiste en la animación de esqueleto</p>
-					</section>
-
-					-->
-										
-
-
-				</section>
-
-				<section>
 					<section>
 						<h1>Cinemática</h1>
 					</section>
 
 					<section>
-						<h3>Cinemática directa</h3>
 						<div style="text-align: justify; float: left; width: 50%">
-							<br>
-							<ul style="text-align: justify; font-size: 1em !important;">
-							<br>
-							<li class="fragment" data-fragment-index="1"> Se describe el movimiento mediante la manipulación directa de las articulaciones. </li>
-							<br>
-							<li class="fragment" data-fragment-index="2"> Se debe indicar cuánto debe rotar cada articulación. </li>
-							<br>
-							<li class="fragment" data-fragment-index="3"> Existe una única solución. </li>
-							<br>
-							<li class="fragment" data-fragment-index="5"> Conocida la orientación de cada articulación se determina la posición / orientación global del efector final:
-								<p class="center">$S_{d} = (^{0}\mathbf{q}_{d}, ^{0}\mathbf{o}_{d}) = f(^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n})$</p>
-							</li>
-							</ul>
-						</div>
-						<div style="text-align: justify-all; float : left; width : 50%" class=embed-container >
-							<div class="fragment" data-fragment-index="4">
-								<br>
-								<br>
+							<h3 class="center">Cinemática directa</h3>
+							<p class="fragment"> <b>Entrada:</b> Orientación de cada articulación.</p>
+							<p class="fragment"> <b>Salida:</b> Posición/Orientación del efector final.</p>
+							<div class="fragment">
 								<iframe class = "ivideo"  data-src="videos/FK.webm" type="video/webm">
 								</iframe>
 							</div>
+							<p class="fragment center">$S_{d} = (^{0}\mathbf{q}_{d}, ^{0}\mathbf{o}_{d}) = f(^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n})$</p>
 						</div>
-  
-					</section>
-
-					<section>
-						<h3>Cinemática inversa</h3>
-						<div style="text-align: justify; float: left; width: 50%">
-							<br>
-							<ul style="text-align: justify-all; font-size: 1em !important;">
-							<li class="fragment" data-fragment-index="1"> Se describe el movimiento mediante la manipulación de un objetivo asociado al efector final. </li>
-							<br>
-							<li class="fragment" data-fragment-index="2"> Se obtiene como resultado cuanto debe rotar cada articulación. </li>
-							<br>
-							<li class="fragment" data-fragment-index="3"> Puede no tener soluciones, una única solución o múltiples soluciones. </li>
-							<br>
-							<li class="fragment" data-fragment-index="5"> Conocida la posición / orientación objetivo $ {S_{d}} $ del efector final $ J_n$
-								se determina la orientación de cada articulación: 
-								<p style="text-align: center;"> $f^{-1}(S_{d}) = ^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n}$</p>
-							</li>
-							<li class="fragment" data-fragment-index="6">
-								Se debe minimizar la distancia posicional $d_p$ y/o orientacional $d_o$ entre el efector final y su objetivo.
-							</li>
-							</ul>
-							<!-- more Elements -->
-						  </div>
-						  <div style="text-align: justify-all; float : left; width : 50%" class=embed-container >
-							<br>
-							<br>
-							<br>
-
-							<div class="fragment" data-fragment-index="4">
+						<div style="text-align: justify; float : left; width : 50%" class=embed-container >
+							<h3 class="center">Cinemática Inversa</h3>
+							<p class="fragment"> <b>Entrada:</b> Posición/Orientación del efector final.</p>
+							<p class="fragment"> <b>Salida:</b> Orientación de cada articulación.</p>
+							<div class="fragment">
 								<iframe class = "ivideo"  data-src="videos/IK.webm" type="video/webm">
 								</iframe>
 							</div>
+							<p class="fragment center"> $f^{-1}(S_{d}) = ^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n}$</p>
 						</div>
 					</section>
 
 					<section>
-						<h3>Restricciones</h3>
-						<ul class="justify">
-							<br>
-							<li class="fragment"> Se desea que los movimientos producidos sean visualmente atractivos e imiten a los observados en la naturaleza. </li>
-							<li class="fragment"> <b>Inconveniente:</b> Existen múltiples soluciones para resolver el problema de cinemática inversa .</li>
-							<li class="fragment"> <b>Solución:</b> Limitar el movimiento de las articulaciones. </li>
-							<li class="fragment"> Para aplicaciones en tiempo real se requieren restricciones simples y eficientes.</li>
-							<li class="fragment"> Por articulación se define una región limite. </li>
-							<li class="fragment"> Cada vez que una articulación rota debe verificarse que el hueso conectado a ella esté dentro de la región factible.</li>
-						  </ul>
-						  
+						<h1>Restricciones</h1>
 					</section>
 
 					<section>
-						<div style="text-align: justify-all; float : left; width : 50%" class=embed-container >
-							<br>
-							<div class="fragment" data-fragment-index="1">
-								<h3>Sin restricciones</h3>
-								<iframe class = "ivideo"  data-src="videos/simple_unconstrained.mp4" type="video/mp4">
+						<div style="text-align: justify; float: left; width: 50%">
+							<p class="fragment" style="margin-right: 5%;"> Se desea que los movimientos producidos sean visualmente atractivos e imiten a los observados en la naturaleza. </p>
+							<div class="fragment">
+								<iframe class = "ivideo"  data-src="videos/unconstrained.mp4" type="video/mp4">
 								</iframe>
 							</div>
+							<p class="fragment" style="margin-right: 5%;"><b>Inconveniente:</b> Existen múltiples soluciones para resolver el problema de cinemática inversa. </p>
 						</div>
-						<div style="text-align: justify-all; float : left; width : 50%" class=embed-container >
+						<div style="text-align: justify; float : left; width : 50%" class=embed-container >
+							<p class="fragment" style="margin-right: 5%;"> <b>Solución:</b> Limitar el movimiento de las articulaciones mediante restricciones simples y eficientes.</p>
 							<br>
-							<div class="fragment" data-fragment-index="1">
-								<h3>Con restricciones</h3>
-								<iframe class = "ivideo"  data-src="videos/simple_constrained.mp4" type="video/mp4">
+							<div class="fragment">
+								<iframe class = "ivideo"  data-src="videos/constrained.mp4" type="video/mp4">
 								</iframe>
+							</div>
+							<p class="fragment" style="margin-right: 5%;"> Cada vez que una articulación rota debe verificarse que se mantiene dentro de la región factible.</p>
+						</div>
+					</section>
+
+					<section>
+						<div style="text-align: center; float: left; width: 50%">
+							<h3>Restricción de bisagra</h3>
+							<p class = "fragment justify" style="margin-right: 3%;"> Permite que una articulación $J_i$ rote sólo alrededor de un eje de rotación.</p>
+							<br>
+							<div class="fragment">
+								<iframe class = "ivideo"  data-src="videos/hinge_interactive.webm" type="video/webm"></iframe>
+							</div>
+						</div>
+						<div style="text-align: center; float : left; width : 50%" class=embed-container >
+							<h3>Restricción cónica</h3>
+							<p class = "fragment justify">Permite a una articulación $J_i$ rote libremente alrededor de cualquier eje de rotación.
+							</p>
+							<br>
+							<div class="fragment">
+								<iframe class = "ivideo"  data-src="videos/BallAndSocket.webm" type="video/webm"></iframe>
 							</div>
 						</div>
 					</section>
 
+
+					<!--
 					<section>
 						<h3>Restricción de bisagra</h3>
 						<p class = "fragment"> Permite que una articulación $J_i$ rote sólo alrededor de un eje de rotación. Se establece un ángulo máximo y mínimo de rotación.</p>
@@ -286,27 +207,11 @@
 						</div>
 
 					</section>
+					-->
 
-					<section>
-						<div style="text-align: justify-all; float : left; width : 50%" class=embed-container >
-							<br>
-							<div >
-								<h3>Sin restricciones</h3>
-								<iframe class = "ivideo"  data-src="videos/unconstrained.mp4" type="video/mp4">
-								</iframe>
-							</div>
-						</div>
-						<div style="text-align: justify-all; float : left; width : 50%" class=embed-container >
-							<br>
-							<div>
-								<h3>Con restricciones</h3>
-								<iframe class = "ivideo"  data-src="videos/constrained.mp4" type="video/mp4">
-								</iframe>
-							</div>
-						</div>
-					</section>
 
 				</section>
+
 
 
 				<!--- Fundamentos y Antecedentes-->	
@@ -317,59 +222,31 @@
 						<h1>Métodos de cinemática inversa</h1>
 					</section>
 
-					<section>
-						<h3>Métodos de cinemática inversa</h3>
-						<br>
-						<div class="justify">
-							<p class="fragment">Para aplicaciones en tiempo real se requieren métodos que cumplan con los siguientes criterios (Aristidou et al.):</p>
-							<br>
-							<ul>
-								<li class="fragment">Precisión: reduzcan la distancia entre los objetivos y los efectores finales</li>
-								<li class="fragment">Eficiencia: generen la pose resultante tan rápido como sea posible.</li>
-								<li class="fragment">Escalabilidad: trabajen con un gran numero de articulaciones y con distintos tipos de restricciones</li>
-								<li class="fragment">Suavidad visual: distribuyan el movimiento apropiadamente y generen movimientos visualmente atractivos.</li>
-							</ul>
-						</div>							
-					</section>
 
 					<section>
 						<h3>Métodos de cinemática inversa</h3>
 						<br>
-						<p class="fragment" style="text-align: left;">Existen diversos métodos para resolver el problema de IK que pueden que pueden clasificarse como (Aristidou et al.):</p>
-						<br>
-						<table style="width:80%">
-							  <tr>
-								<td class="fragment">Métodos Analíticos</th>
-								<td class="fragment"><b>Métodos Numéricos</b></th>
-								<td class="fragment">Métodos Basados en datos</th>
-								<td class="fragment">Métodos Híbridos</th>
-							  </tr>
-						</table>
-						<br>
-						<p class="fragment" style="text-align: left;"><b>Métodos numéricos &rarr; Métodos heurísticos</b>: </p>
-						<br>
-						<div class="justify">
-						<ul>
-							<li class="fragment" style="text-align: left;"> Realizan de manera avara acciones geométricas simples con bajo costo computacional.</li>
-							<li class="fragment" style="text-align: left;"> Se usan principalmente en aplicaciones interactivas, sobre estructuras no antropomórficas.</li>
-							<li class="fragment" style="text-align: left;"> Ocasionalmente Presentan inconvenientes en términos de suavidad visual y estancamiento en óptimos locales.</li>
-						</ul>
-						</div>						
+						<p class="fragment justify">Para aplicaciones en tiempo real se requieren métodos que cumplan con los siguientes criterios (Aristidou et al.):</p>
+						<figure class="fragment">
+							<img width = "95%" data-src='fig/criterios.png'/>
+						</figure>
 					</section>
 
 
 					<section>
-						<h3>Cyclic Coordinate Descent (CCD)</h3>
-						<br>
-						<div class = "justify">
-							<ul>
-								<li class="fragment">Propuesto originalmente por <a href="https://doi.org/10.1109/70.86079">Wang y Chen</a>.</li>
-								<li class="fragment">Empleado en aplicaciones de tiempo real dada su simplicidad y bajo costo computacional.</li>
-								<li class="fragment">Recorre la estructura secuencialmente desde el efector final $J_n$ hasta la raíz $J_0$.</li>
-								<li class="fragment">Mueve la articulación $J_i$ y asume que las demás permanecen fijas.</li>
-							</ul>
-						</div>
+						<h3>Clasificación de los métodos de cinemática inversa</h3>
+						<figure class="fragment">
+							<img width = "80%" data-src='fig/metodos.png'/>
+						</figure>
 					</section>
+
+					<section>
+						<h3>Métodos heurísiticos de cinemática inversa</h3>
+						<figure class="fragment">
+							<img width = "80%" data-src='fig/metodos_heuristicos.png'/>
+						</figure>
+					</section>
+
 					<section>
 						<h3>Cyclic Coordinate Descent (CCD)</h3>
 						<p class="fragment">Encuentra la rotación que alinea a los vectores: $ \mathbf{a}={^{i}\mathbf{o}_{n}} $ y $ \mathbf{b}={^{i}\mathbf{o}_{d}} $</p>
@@ -378,27 +255,6 @@
 						</p>
 						<iframe class = "ivideo"  data-src="videos/CCD.mp4" type="video/mp4">
 						</iframe>
-					</section>
-
-					<section>
-						<h3>Cyclic Coordinate Descent (CCD)</h3>
-						<iframe class = "ivideo"  data-src="videos/CCD_Example.mp4" type="video/mp4">
-						</iframe>
-
-						<p class="fragment">Permite trabajar con estructuras altamente articuladas, como humanos e insectos <a href="https://doi.org/10.1109/70.86079">(Kenwright)</a></p>
-						<p class="fragment justify"><b>Principales inconvenientes:</b> distribución inadecuada del movimiento, generación de poses discontinuas y una convergencia lenta para objetivos inalcanzables <a href="https://doi.org/10.1109/70.86079">(Aristidou)</a>.</p> 
-					</section>
-					<section>
-						<h3>Triangulation (TIK)</h3>
-						<br>
-						<div class="justify">
-						<ul>
-							<li class="fragment">Propuesto originalmente por <a href="https://doi.org/10.1109/70.86079">Muller-Cajar y Mukundan</a>.</li>
-							<li class="fragment">Recorre la estructura secuencialmente desde la raíz $J_0$ hasta el efector final $J_n$.</li>
-							<li class="fragment">Considera el movimiento de las articulaciones $ (J_{i},J_{i+1}) $ y asume que las demás se mantienen fijas.</li>
-							<li class="fragment">Para encontrar la rotación óptima que debe aplicarse a $J_i$ se utiliza la ley de cosenos.</li>
-						</ul>
-						</div>
 					</section>
 
 					<section>
@@ -412,31 +268,6 @@
 						</p>
 						<iframe class = "ivideo"  data-src="videos/TIK.mp4" type="video/mp4">
 						</iframe>
-					</section>
-
-
-					<section>
-						<h3>Triangulation (TIK)</h3>
-						<iframe class = "ivideo"  data-src="videos/TIK_Example.mp4" type="video/mp4">
-						</iframe>
-						<p class="fragment">TIK es más eficiente que CCD y para estructuras irrestrictas converge en una sola iteración</p>
-						<p class="fragment justify"><b>Principales inconvenientes:</b> distribución inadecuada del movimiento, generación de poses discontinuas y falta de escalabilidad para estructuras con restricciones.</p> 
-
-					</section>
-
-
-					<section>
-						<h3>Forward and Backward Reaching Inverse Kinematics (FABRIK)</h3>
-						<br>
-						<div class="justify">
-							<ul>
-								<li class="fragment">Propuesto por <a href="http://andreasaristidou.com/FABRIK.html">Andreas Aristidou y  Joan Lasenby</a>.</li>
-								<li class="fragment">Es eficiente, simple y tiene la capacidad para generar movimientos suaves.</li>
-								<li class="fragment">Contrario a CCD y TIK, trabaja en el espacio de las posiciones usando.</li>
-								<li class="fragment">Reubica la posición de las articulaciones empleando proyecciones en líneas.</li>
-								<li class="fragment">Emplea dos fases para reducir la distancia posicional al objetivo.</li>
-							</ul>
-						</div>
 					</section>
 
 					<section>
@@ -459,15 +290,30 @@
 						</iframe>
 					</section>
 
-
 					<section>
-						<h3>Forward and Backward Reaching Inverse Kinematics (FABRIK)</h3>
-						<iframe class = "ivideo"  data-src="videos/FABRIK_Example.mp4" type="video/mp4">
+						<h3>Ejemplo - Algoritmos heurísticos  para estructuras sin restricciones</h3>
+						<br>
+						<iframe class = "ivideo"  data-src="videos/State_art_None.mp4" type="video/mp4">
 						</iframe>
-						<p class="fragment">En estructuras articuladas sin restricciones FABRIK converge a la solución optima y produce movimientos más suaves que CCD o TIK.</p>
-						<p class="fragment" style="text-align: justify;"><b>Principales inconvenientes:</b> Problemas de discontinuidades y de precisión cuando se utiliza con <a href="http://andreasaristidou.com/InverseKinematics.html">estructuras altamente restrictas</a>. Además, no genera un resultado en el espacio de las orientaciones, lo cual es requerido para diversas tareas de robótica y animación por esqueleto. </p>
 					</section>
 
+					<section>
+						<h3>Ejemplo - Algoritmos heurísticos  para estructuras con restricciones</h3>
+						<div style="text-align: center; float: left; width: 50%">
+							<h3>Restricciones cónicas</h3>
+							<br>
+							<div class="fragment">
+								<iframe class = "ivideo"  data-src="videos/State_art_Cone.mp4" type="video/mp4"></iframe>
+							</div>
+						</div>
+						<div style="text-align: center; float : left; width : 50%" class=embed-container >
+							<h3>Restricciones de bisagra</h3>
+							<br>
+							<div class="fragment">
+								<iframe class = "ivideo"  data-src="videos/State_art_Hinge.mp4" type="video/mp4"></iframe>
+							</div>
+						</div>
+					</section>
 
 				</section>
 
@@ -481,26 +327,22 @@
 					</section>
 
 					<section>
-						<h3> Objetivos</h3>
+						<h3>Objetivos</h3>
 						<br>
-						<ol class="justify">
-							<li class = "fragment"> Analizar la estructura y las características de los métodos heurísticos de cinemática inversa. </li> 
-							<li class = "fragment"> Proponer heurísticas que puedan extender el método FABRIK para evitar problemas de precisión, continuidad, bloqueos y oscilaciones, especialmente al trabajar con estructuras altamente restrictas. </li> 
-							<li class = "fragment"> Comparar el desempeño en precisión, eficiencia, escalabilidad y suavidad visual del método propuesto con los algoritmos heurísticos más importantes mediante un conjunto de experimentos. </li> 
-						</ol>
+						<figure class="fragment">
+							<img width = "95%" data-src='fig/objetivos.png'/>
+						</figure>
 					</section>
 
 					<section>
-						<h3> Idea </h3>
+						<h3>Idea</h3>
 						<br>
-						<ol class="justify">
-							<li class = "fragment"> Introducir el concepto de pasos heurísticos: acciones locales a aplicar sobre cada articulación inspiradas en FABRIK, CCD y TIK. </li> 
-							<li class = "fragment"> Combinar ideas de diversos pasos heurísticos para sacar provecho de sus mejores propiedades y superar sus limitaciones. </li>
-							<li class = "fragment"> 
-								Definir el algoritmo  Generic Heuristic Inverse Kinematics (GHIK) que aplique de forma iterativa los pasos propuestos, y que considere restricciones rotacionales, estancamiento en óptimos locales, objetivos de orientación y estructuras con múltiples efectores finales.
-							</li> 
-						</ol>
+						<figure class="fragment">
+							<img width = "95%" data-src='fig/idea.png'/>
+						</figure>
+						<p class="fragment"><b>Propósito:</b> aprovechar las mejores propiedades de FABRIK, CCD, TIK.</p>
 					</section>
+
 
 					<section>
 						<h1> Pasos heurísticos</h1>
@@ -515,7 +357,6 @@
 							<li class = "fragment"> Se aplica un desplazamiento rotacional $ {\mathbf{\Delta q}_i} $ sobre una articulacion $J_i$ o $ ({\mathbf{\Delta q}_i},{\mathbf{\Delta q}}_{i+1}) $ una pareja de articulaciones $(J_i, J_{i+1})$.</li>
 							<li class = "fragment"> Siempre se genera una nueva pose factible de la estructura y cuya distancia al objetivo disminuye o se mantiene.</li>
 							<li class = "fragment"> Dadas sus caracteristicas pueden aplicarse en un orden arbitrario y pueden combinarse.</li>
-							<li class = "fragment"> <b>Propósito:</b> aprovechar las mejores propiedades de CCD, TIK y FABRIK. </li>
 						</ul>
 					</section>
 
@@ -569,9 +410,14 @@
 
 					<section>
 						<h3>Translate and Reach Inverse Kinematics (TRIK)</h3>
-						<p class="fragment"> 
-							1. Reducir la distancia a $S_d$: $ {\mathbf{\Delta q}_i}=\left(cos\left(\frac{\theta}{2}\right),\mathbf{\hat{r}}\sin\left(\frac{\theta}{2}\right)\right) $ donde $ \cos(\theta) = \mathbf{a} \, \cdot \, \mathbf{b} $, $ \mathbf{\hat{r}} = \frac{\mathbf{a}}{\left\rVert{\mathbf{a}}\right\rVert}  \, \times \, \frac{\mathbf{b}}{\left\rVert{\mathbf{b}}\right\rVert} $ 
-						</p>
+						<div class="fragment">
+							<p> 
+								1. Reducir la distancia a $S_d$: $ {\mathbf{\Delta q}_i}=\left(cos\left(\frac{\theta}{2}\right),\mathbf{\hat{r}}\sin\left(\frac{\theta}{2}\right)\right) $ donde $ \cos(\theta) = \mathbf{a} \, \cdot \, \mathbf{b} $, $ \mathbf{\hat{r}} = \frac{\mathbf{a}}{\left\rVert{\mathbf{a}}\right\rVert}  \, \times \, \frac{\mathbf{b}}{\left\rVert{\mathbf{b}}\right\rVert} $,
+							</p>
+							<p>
+								$ \mathbf{a}={\boldsymbol{o}_{i+1}} $ y $ {\mathbf{b}={^{i}\mathbf{o}_{d}}+{\mathbf{o}_{i+1}}-{^{i}\mathbf{o}_{n}}} $							
+							</p>
+						</div>
 						<p class="fragment"> 
 							2. Mantener la orientación global de $J_{i+1}$: $ {\mathbf{\Delta q}_{i+1}} = {{\mathbf{q}_{i+1}}^{*}} \, {{\mathbf{\Delta q}_i}^{*}} \, {\mathbf{q}_{i+1}} $ 
 						</p>
@@ -587,14 +433,12 @@
 								<li class = "fragment">Puede aplicarse sobre estructuras articuladas altamente restrictas.</li>
 								<li class = "fragment">Considera el movimiento de una pareja de articulaciones $(J_i, J_{i+1})$.</li>
 								<li class = "fragment">Permite combinar ideas de distintas heurísticas mediante las siguientes acciones:
-									<ol>
-										<br>
-										<li class = "fragment"> Definir un conjunto $ C $ de poses candidatas obtenidas tras aplicar un paso heurístico (C puede tener un único elemento).</li>
-										<li class = "fragment"> Refinar Cada pose candidata aplicando CCD de manera intercalada sobre las articulaciones $ J_{i} $ y $ J_{i+1} $. </li>
-										<li class = "fragment"> Elegir la pose candidata con menor distancia al efector final y que genera el menor desplazamiento. </li>
-									</ol>
 								</li>
 							</ul>
+							<figure class="fragment">
+								<img width = "95%" data-src='fig/BFIK.png'/>
+							</figure>
+	
 						</div>
 
 					</section>
@@ -602,9 +446,9 @@
 					<section>
 						<h3>Back and Forth Inverse Kinematics (B&FIK) </h3>
 							<p class="fragment justify"> Variantes de B&FIK si el conjunto C tiene un único elemento:</p>
-							<p class="fragment justify"> <b>B&FIK$&lt;CCD&gt;$</b>:  C se compone de la pose resultante de aplicar CCD.</p>
-							<p class="fragment justify"> <b>B&FIK$&lt;TIK&gt;$</b>:  C se compone de la pose resultante de aplicar TIK.</p>
-							<p class="fragment justify"> <b>B&FIK$&lt;TRIK&gt;$</b>: C se compone de la pose resultante de aplicar TRIK.</p>							
+							<p class="fragment justify"> <b>B&FIK$&lt;CCD&gt;$</b>:  C se compone de la pose resultante tras aplicar CCD.</p>
+							<p class="fragment justify"> <b>B&FIK$&lt;TIK&gt;$</b>:  C se compone de la pose resultante tras aplicar TIK.</p>
+							<p class="fragment justify"> <b>B&FIK$&lt;TRIK&gt;$</b>: C se compone de la pose resultante tras aplicar TRIK.</p>							
 					</section>
 
 					<section>
@@ -619,7 +463,7 @@
 							<br>
 							<div class = "justify">
 								<p class="fragment"> Variante de B&FIK si el conjunto C tiene un dos elementos:</p>
-								<p class="fragment"> <b>B&FIK$&lt;ETIK&gt;$</b>:  los elementos de C corresponden a las dos poses obtenidas por la extensión de la heurística TIK (ETIK).</p>
+								<p class="fragment"> <b>B&FIK$&lt;ETIK&gt;$</b>:  C se compone de las dos poses resultantes tras aplicar ETIK.</p>
 								<p class="fragment"> Combinar las ideas de ETIK y CCD genera resultados precisos y disminuye las situaciones de bloqueo.</p>
 							</div>
 						</section>
@@ -657,50 +501,52 @@
 
 					<section>
 						<h3>Fixing orientation step (FIXO)</h3>
-						<p class="fragment"> Rotación sobre $J_{i}$ que minimiza la distancia orientacional: 
-						</p>
-						<p class="fragment"> 
-							${\mathbf{\Delta q}_{i\_or}} = \left(cos\left(\frac{\theta_{or}}{2}\right),\mathbf{\hat{r}}\sin\left(\frac{\theta_{or}}{2}\right)\right) = {{^{0}\mathbf{q}_{i}}^{*}} \, {^{0}\mathbf{q}_{d}} \,  {^{i}{\mathbf{q}_{n}}^{*}} $
-						</p>
-						<iframe class = "ivideo"  data-src="videos/FIXO.mp4" type="video/mp4">
-						</iframe>
-					</section>
-
-					<section>
-						<h3>Fixing orientation step (FIXO)</h3>
-						<div class = "fragment">
+						<div>
 							<div style="float : left; width : 50%" class=embed-container>
-								<br>
-								<iframe class = "ivideo"  data-src="videos/FIXO-Example.mp4" type="video/mp4">
-								</iframe>
+								<p class="fragment" data-fragment-index="2"> Rotación sobre $J_{i}$ que minimiza la distancia orientacional: 
+								<p class="fragment" data-fragment-index="3"> 
+									${\mathbf{\Delta q}_{i\_or}} = \left(cos\left(\frac{\theta_{or}}{2}\right),\mathbf{\hat{r}}\sin\left(\frac{\theta_{or}}{2}\right)\right) = {{^{0}\mathbf{q}_{i}}^{*}} \, {^{0}\mathbf{q}_{d}} \,  {^{i}{\mathbf{q}_{n}}^{*}} $
+								</p>
+								<div class = "fragment" data-fragment-index="1">		
+									<iframe class = "ivideo"  data-src="videos/FIXO.mp4" type="video/mp4">
+									</iframe>
+								</div>
 							</div>
 							<div style="float : right; width : 50%" class=embed-container >
-								<br>
-								<iframe class = "ivideo"  data-src="videos/FIXO_Example_2.mp4" type="video/mp4">
-								</iframe>
+								<p class="fragment" data-fragment-index="5"> 
+									El ángulo $ {\theta}_{or} $ se limita de acuerdo a los pesos que se asocien a la distancia posicional y orientacional. 
+								</p>
+								<br>		
+								<div class = "fragment" data-fragment-index="4">		
+									<iframe class = "ivideo"  data-src="videos/FIXO_Example_2.mp4" type="video/mp4">
+									</iframe>
+								</div>
 							</div>
 						</div>
+						<!--
 						<p class="fragment"> 
 							Se puede limitar el ángulo $ {\theta}_{or}$ considerando la distancia orientacional $d_o$, su peso asociado $w_o$ y el índice $i$ de la articulación:
 						</p>
 						<p class="fragment"> 
 							${\theta_{or}}' = \min\left( {\theta}_{or} \, , \, w_o \, d_{o}({^{0}\mathbf{q}_{n}},{\mathbf{q}_{d}}) \, \frac{i}{n}\right)$
 						</p>
+						-->
 
 					</section>
 
 
 					<!-- GHIK -->
 					<section>
-						<h1> Algoritmo GHIK</h1>
+						<h1> Algoritmo Generic Heuristic Inverse Kinematics (GHIK)</h1>
 					</section>
 
+					<!--
 					<section>
 						<h3> Algoritmo GHIK</h3>
-						<div class = "justify">
+						<div class>
 							<br>
-							<p class="fragment"> Dada una cadena cinemática $ K=(J_{1},\ldots,J_{n}) $ el algoritmo <em>Generic Heuristic Inverse Kinematics</em> (GHIK) se encarga de:</p>
-							<ul>
+							<p class="fragment justify"> Dada una cadena cinemática $ K=(J_{1},\ldots,J_{n}) $ el algoritmo <b>Generic Heuristic Inverse Kinematics</b> (GHIK) se encarga de:</p>
+							<ul class = "justify">
 								<li class="fragment"> <b>Resolver objetivos tanto posicionales como orientacionales:</b> aplica un tipo de paso heurístico de forma iterativa. </li>
 								<li class="fragment"> <b>Establecer el orden en que se visitarán las articulaciones:</b> desde $J_n$ hasta $J_0$ o viceversa.</li>
 								<li class="fragment"> <b>Asegurar que la pose resultante sea factible:</b> Proyectar los desplazamientos rotacionales a la región factible.</li>
@@ -709,19 +555,27 @@
 							</ul>
 						</div>
 					</section>
+					-->
 
 					<section>
-						<h3> Algoritmo GHIK para múltiples efectores finales</h3>
-						<div class = "justify">
-							<br>
-							<p class="fragment">Cuando la estructura articulada tiene mas de un efector final se propone:</p>
-							<br>
-							<ul>
-								<li class="fragment"> Dividir la estructura articulada en cadenas cinemáticas. </li>
-								<li class="fragment"> Resolver el problema de manera independiente para cada una de ellas (aplicar GHIK sobre cada cadena).</li>
-							</ul>
+						<h3> Algoritmo GHIK para cadenas cinemáticas</h3>
+						<p class="fragment"> <b>Entrada</b> una cadena cinemática $ K=(J_{1},\ldots,J_{n}) $, un objetivo $S_d$ y un paso heurístico a aplicar.</p>
+						<div class="fragment">
+							<iframe class = "dia" marginheight="0" marginwidth="0" data-src="https://app.creately.com/diagram/9BDHQxBKFXK/view">
+								<p>Your browser does not support iframes.</p>
+							</iframe>						
 						</div>
 					</section>
+
+
+					<section>
+						<h3>Algoritmo GHIK para múltiples efectores finales</h3>
+						<br>	
+						<figure class="fragment">
+							<img width = "80%" data-src='fig/ghik_multiple.png'/>
+						</figure>
+					</section>
+
 
 
 					<section>
@@ -757,15 +611,14 @@
 						<br>
 						<div style="text-align: justify; float: left; width: 50%">
 							<br>
+							<p class="justify fragment" data-fragment-index="1">Se aplica el algoritmo GHIK para cadenas cinemáticas sobre las cadenas obtenidas.</p>
 							<br>
-							<p class="justify fragment">Se aplica el algoritmo GHIK para cadenas cinemáticas sobre las cadenas obtenidas.</p>
+							<p class="justify fragment" data-fragment-index="2">Las cadenas externas tienen un objetivo asociado de forma explícita. </p>
 							<br>
-							<p class="justify fragment">Las cadenas externas tienen un objetivo asociado de forma explícita. </p>
-							<br>
-							<p class="justify fragment">Para las cadenas internas es necesario definir  cuál es el objetivo que debe alcanzarse a partir de la información de los efectores finales	descendientes de ellas.</p>
+							<p class="justify fragment" data-fragment-index="4">Para las cadenas internas es necesario definir  cuál es el objetivo que debe alcanzarse a partir de la información de los efectores finales	descendientes de ellas.</p>
 						</div>
 						<div style="text-align: center; float : left; width : 50%" class=embed-container >
-							<div class="fragment">
+							<div class="fragment" data-fragment-index="3">
 								<br>
 								<img width = "80%" data-src='fig/GHIKSkeleton.jpg'/>
 							</div>
@@ -792,8 +645,8 @@
 	
 						<div style="text-align: center; float : left; width : 50%" class=embed-container >
 							<div class="fragment">
-								<br>.
-								<br>
+								<br> <br> 
+								<br> <br>
 								<iframe class = "ivideo"  data-src="videos/registration.mp4" type="video/mp4">
 								</iframe>
 							</div>
@@ -815,23 +668,41 @@
 							<ul style="text-align: justify; font-size: 1em !important;">
 							<br>
 							<li class="fragment" data-fragment-index="1"> Se definieron cuatro grupos distintos de cadenas generadas aleatoriamente: 
-								<p style="padding-left: 5%;"> a) Irrestrictas, b) Bisagra, c) Cónicas, d) Mixtas </p> </li>
-							<li class="fragment" data-fragment-index="2"> Cada grupo contenía 500 cadenas compuestas por entre 4 y 20 articulaciones. </li>
+								<p style="padding-left: 5%;"> 
+									<span class = "fragment" data-fragment-index="2"> a) Irrestrictas</span>
+									<span class = "fragment" data-fragment-index="3"> b) Bisagra</span>
+									<span class = "fragment" data-fragment-index="4"> c) Cónicas</span>
+									<span class = "fragment" data-fragment-index="5"> d) Mixtas</span>
+								</p> 
+							</li>
+							<li class="fragment" data-fragment-index="6"> Cada grupo contenía 500 cadenas compuestas por entre 4 y 20 articulaciones. </li>
 							<br>
-							<li class="fragment" data-fragment-index="3"> Datos de entrada: trayectorias continuas y discontinuas compuestas por 100 objetivos de posición. </li>
+							<li class="fragment" data-fragment-index="7"> Datos de entrada: trayectorias continuas y discontinuas compuestas por 100 objetivos de posición. </li>
 							<br>
-							<li class="fragment" data-fragment-index="4"> Condiciones de parada: la distancia posicional es inferior al 0.1% ó se excede un máximo de 50 iteraciones. </li>
+							<li class="fragment" data-fragment-index="8"> Condiciones de parada: la distancia posicional es inferior al 0.1% ó se excede un máximo de 50 iteraciones. </li>
 							<br>
 							</ul>
 						</div>
 						<div style="text-align: justify-all; float : left; width : 40%" class=embed-container >
-							<br>
-							<div class="fragment" data-fragment-index="1">
-								<figure class="fragment" data-fragment-index="1">
-									<img width = "50%" data-src='fig/chains.jpg'/>
-								</figure>		
+							<div class="r-stack">
+								<figure class="fragment fade-in-then-out" data-fragment-index="2">
+									<img width = "50%" data-src='fig/irrestrictas.jpg'/>
+								</figure>
+								<figure class="fragment fade-in-then-out" data-fragment-index="3">
+									<img width = "50%" data-src='fig/bisagra.jpg'/>
+								</figure>
+								<figure class="fragment fade-in-then-out" data-fragment-index="4">
+									<img width = "50%" data-src='fig/conicas.jpg'/>
+								</figure>
+								<figure class="fragment fade-in-then-out" data-fragment-index="5">
+									<img width = "50%" data-src='fig/mixtas.jpg'/>
+								</figure>
+								<figure class="fragment fade-in" data-fragment-index="6">
+									<img width = "80%" data-src='fig/cadenas.jpg'/>
+								</figure>
 							</div>
 						</div>
+
 					</section>
 
 					<section>
@@ -926,13 +797,17 @@
 							<li class="fragment" data-fragment-index="1"> Se planteó la reconstrucción del movimiento a partir de la información del movimiento de los efectores finales.
 							</li>
 							<li class="fragment" data-fragment-index="2"> Se utilizaron estructuras altamente restrictas con distinta topología y capacidad de movimiento:
-								a) Humano, b) Gato, c) Araña, d) Tiranosaurio, e) Mono, f) Dragón.  
+									<span class = "fragment" data-fragment-index="2"> a) Humano, </span>
+									<span class = "fragment" data-fragment-index="3"> b) Gato, </span>
+									<span class = "fragment" data-fragment-index="4"> c) Araña, </span>
+									<span class = "fragment" data-fragment-index="5"> d) Tiranosaurio, </span>
+									<span class = "fragment" data-fragment-index="6"> e) Mono, </span>
+									<span class = "fragment" data-fragment-index="7"> f) Dragón. </span>
 							</li>
-							<li class="fragment" data-fragment-index="3"> Se asignó a cada articulación una restricción cónica inferida de la animación original.
+							<li class="fragment" data-fragment-index="8"> Se asignó a cada articulación una restricción cónica inferida de la animación original.
 							</li>	
-							<li class="fragment" data-fragment-index="4"> Datos de entrada: pose inicial, posicion y orientacion de los efectores finales y de la raiz. </li>
-							<br>
-							<li class="fragment" data-fragment-index="5"> Condiciones de parada: la distancia posicional es inferior al 0.1% ó se excede un máximo de 5 iteraciones. </li>
+							<li class="fragment" data-fragment-index="9"> Datos de entrada: pose inicial, posicion y orientacion de los efectores finales y de la raiz. </li>
+							<li class="fragment" data-fragment-index="10"> Condiciones de parada: la distancia posicional es inferior al 0.1% ó se excede un máximo de 5 iteraciones. </li>
 							<br>
 
 							</ul>
@@ -940,9 +815,43 @@
 						<div style="text-align: justify-all; float : left; width : 40%" class=embed-container >
 							<br>
 							<div class="fragment" data-fragment-index="1">
-								<figure class="fragment" data-fragment-index="1">
-									<img width = "80%" data-src='fig/Figs.jpg'/>
-								</figure>		
+								<div class="r-stack">
+									<figure class="fragment fade-in-then-out" data-fragment-index="2">
+										<img width = "80%" data-src='fig/humano.jpg'/>
+										<p>Articulaciones: 23</p>
+										<p>Efectores finales: 5</p>
+									</figure>
+									<figure class="fragment fade-in-then-out" data-fragment-index="3">
+										<img width = "80%" data-src='fig/gato.jpg'/>
+										<p>Articulaciones: 44</p>
+										<p>Efectores finales: 11</p>
+									</figure>
+									<figure class="fragment fade-in-then-out" data-fragment-index="4">
+										<img width = "80%" data-src='fig/arana.jpg'/>
+										<p>Articulaciones: 62</p>
+										<p>Efectores finales: 14</p>
+									</figure>
+									<figure class="fragment fade-in-then-out" data-fragment-index="5">
+										<img width = "80%" data-src='fig/tirano.jpg'/>
+										<p>Articulaciones: 69</p>
+										<p>Efectores finales: 16</p>
+									</figure>
+									<figure class="fragment fade-in-then-out" data-fragment-index="6">
+										<img width = "80%" data-src='fig/mono.jpg'/>
+										<p>Articulaciones: 86</p>
+										<p>Efectores finales: 22</p>
+									</figure>
+
+									<figure class="fragment fade-in-then-out" data-fragment-index="7">
+										<img width = "80%" data-src='fig/dragon.jpg'/>
+										<p>Articulaciones: 143</p>
+										<p>Efectores finales: 40</p>
+									</figure>
+
+									<figure class="fragment fade-in" data-fragment-index="8">
+										<img width = "90%" data-src='fig/multiples.jpg'/>
+									</figure>
+								</div>
 							</div>
 						</div>
 					</section>
@@ -950,8 +859,6 @@
 					<section>
 						<h3>Métricas</h3>
 						<div style="text-align: justify; float: left; width: 60%">
-							<br>
-							<br>
 							<br>
 							<ul style="text-align: justify; font-size: 0.9em !important;">
 							<li class="fragment" data-fragment-index="1"> DP: promedio de la distancia posicional entre los efectores finales y sus objetivo dividido entre la altura de la estructura y expresado como porcentaje
@@ -966,24 +873,29 @@
 						<div style="text-align: justify-all; float : left; width : 40%" class=embed-container >
 							<div class="r-stack">
 								<figure class="fragment fade-in-then-out" data-fragment-index="2">
-									<img width = "80%" data-src='fig/DE.jpg'/>
+									<img width = "80%" data-src='fig/DPM.jpg'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="4">
-									<img width = "80%" data-src='fig/DO.jpg'/>
+									<img width = "80%" data-src='fig/DOM.jpg'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="6">
-									<img width = "80%" data-src='fig/MT.jpg'/>
+									<img width = "60%" data-src='fig/MTM.jpg'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="8">
-									<img width = "80%" data-src='fig/DPMPA.jpg'/>
+									<img width = "60%" data-src='fig/EPMPA.jpg'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="10">
-									<img width = "80%" data-src='fig/DOMPA.jpg'/>
+									<img width = "80%" data-src='fig/EOMPA.jpg'/>
 								</figure>
 							</div>
 						</div>
 					</section>
 
+					<section>
+						<h3>Experimento - Reconstruccion del movimiento humano</h3>
+						<iframe class = "ivideo"  data-src="videos/Multiple_experiment.mp4" type="video/mp4">
+						</iframe>
+					</section>
 
 
 					<section>
@@ -999,25 +911,26 @@
 					</section>
 
 					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/MT.html">
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/OE.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MT.html">
 							<p>Your browser does not support iframes.</p>
 						  </iframe>						
 					</section>
 
 					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/MPJPD.html">
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MPJPE.html">
 							<p>Your browser does not support iframes.</p>
 						  </iframe>						
 					</section>
 
 					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/MPJOD.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
-					</section>
-
-					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/GI.html">
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MPJOE.html">
 							<p>Your browser does not support iframes.</p>
 						  </iframe>						
 					</section>
@@ -1059,6 +972,17 @@
 							</li>
 						</ul>
 					</section>
+
+					<section>
+						<h3>Articulaciones</h3>
+						<p class="fragment"> Podemos realizar transformaciónes entre sistemas de coordenadas utilizando las siguientes ecuaciones:
+							$ {^{i-1}\mathbf{x}} = \; {\mathbf{q}_{i}} \; {^{i}\mathbf{x}} \; {\mathbf{q}_{i}}^{*}  \; + \; {\mathbf{o}_{i}} \qquad \qquad
+							 {^{i}\mathbf{x}} = \; {\mathbf{q}_{i}^{*}} \; ({^{i-1}\mathbf{x}}  - {\mathbf{o}_i}) \: {\mathbf{q}_{i}} $
+						</p>
+						<div class="fragment">
+							<iframe class = "ivideo"  data-src="videos/Joints.mp4" type="video/mp4"></iframe>							
+						</div>
+					</section>
 				</section>
 			</div>
 		</div>
@@ -1073,9 +997,8 @@
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
-				width: "100%",
-				height: "100%",
-				zoom: "0.1",
+				width: "120%",
+				height: "120%",
 				margin: 0.05,
 				hash: true,
 				math: {
