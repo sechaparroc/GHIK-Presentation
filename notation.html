@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Notación</title>
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css" id="theme">
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<!-- Custom Presentation Styles -->
+		<style>
+			.logo 
+			{
+				width: auto;
+				height: 20vh;
+			}
+			.results{
+				height : 80vh;
+				width : 80vw;
+			}
+
+			.dia{
+				height : 80vh;
+				width : 80vw;
+			}
+			.ivideo{
+				height : 60vh;
+				width : 80vw;
+			}
+
+			.left {
+				text-align: left;
+			}
+			.center {
+				text-align: center;
+			}
+			.justify{
+				text-align: justify;
+				padding-left: 5%;
+			}
+			.justify p,li::after{
+				content:"\a\a";
+			    white-space: pre;
+			}
+
+			.size {
+			font-size: 80px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Theme selection -->
+				<section id="themes">
+					<h2>Apariencia</h2>
+						<p>
+							Seleccione la apariencia de las diapositivas: <br>
+							<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/black.css'); return false;">Black</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/white.css'); return false;">White</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/league.css'); return false;">League</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/sky.css'); return false;">Sky</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/beige.css'); return false;">Beige</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/simple.css'); return false;">Simple</a> <br>
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/serif.css'); return false;">Serif</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/blood.css'); return false;">Blood</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/night.css'); return false;">Night</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/moon.css'); return false;">Moon</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/solarized.css'); return false;">Solarized</a>
+						</p>
+				</section>
+
+				<section>
+					<section style="font-size: 0.9em;">
+						<h3>Notación</h3>
+						<br>
+						<ul>
+							<li class="fragment">Dada una cadena cinemática $K = (J_1, J_2, ..., J_n)$ compuesta por n articulaciones.</li>
+							<li class="fragment"> $ J_i = ( ^{i-1}q_i, ^{i-1}o_i) $ describe una transformación rígida relativa a su padre $J_{i-1}$.</li>
+							<li class="fragment">La traslación se representa como el vector $^{i-1}o_i \in \mathbb{R}^3$</li>
+							<li class="fragment">La rotación de $ \theta $ radianes alrededor del vector unitario $ {\mathbf{\hat{u}}=(\hat{u}_{x},\hat{u}_{y},\hat{u}_{z})\in\mathbb{R}^{3}} $ se representa como el cuaternión unitario: 
+								<p style="text-align: center;"> $^{i-1}q_i = (w, \mathbf{v})= (w , x, y, z) = \left(cos\left(\frac{\theta}{2}\right), \mathbf{\hat{u}_x} sin\left(\frac{\theta}{2}\right), \mathbf{\hat{u}_y} sin\left(\frac{\theta}{2}\right), \mathbf{\hat{u}_z} sin\left(\frac{\theta}{2}\right)\right)  \in \mathbf{S}^3$ </p>
+							</li>
+							<li class="fragment"> Se define a la multiplicación entre dos cuaterniones como: 
+								<p style="text-align: center;"> $\mathbf{q_1} \mathbf{q_2} = (w_1 w_2 - \mathbf{v}_1 \cdot \mathbf{v}_2, w_1 \mathbf{v}_2 + w_2 \mathbf{v}_1 + \mathbf{v}_1 \times \mathbf{v}_2)$ </p> </li>			
+							<li class="fragment">El resultado de aplicar la rotación $\mathbf{^{i-1}q_i}$ sobre  el vector $\mathbf{x} $ se obtiene mediante la siguiente expresión: 
+								<p style="text-align: center;"> $\mathbf{x}' = \mathbf{^{i-1}q_i} \, \mathbf{x} \, \mathbf{^{i-1}q_i}^*$, donde $ \mathbf{^{i-1}q_i}^* =  (w, -x, -y, -z)$  </p>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Articulaciones</h3>
+						<p class="fragment"> Podemos realizar transformaciónes entre sistemas de coordenadas utilizando las siguientes ecuaciones:
+							$ {^{i-1}\mathbf{x}} = \; {\mathbf{q}_{i}} \; {^{i}\mathbf{x}} \; {\mathbf{q}_{i}}^{*}  \; + \; {\mathbf{o}_{i}} \qquad \qquad
+							 {^{i}\mathbf{x}} = \; {\mathbf{q}_{i}^{*}} \; ({^{i-1}\mathbf{x}}  - {\mathbf{o}_i}) \: {\mathbf{q}_{i}} $
+						</p>
+						<div class="fragment">
+							<iframe class = "ivideo"  data-src="videos/Joints.mp4" type="video/mp4"></iframe>							
+						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				width: "120%",
+				height: "120%",
+				margin: 0.05,
+				hash: true,
+				math: {
+					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					// pass other options into `MathJax.Hub.Config()`
+					TeX: { Macros: { RR: "{\\bf R}" } }
+			    },
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+			});
+
+			// Change the size of our presentation
+			document.querySelector( '.reveal' ).style.width = '100vw';
+			document.querySelector( '.reveal' ).style.height = '100vh';
+
+			// Make reveal.js aware of the size change
+			Reveal.layout();			
+		</script>
+	</body>
+</html>

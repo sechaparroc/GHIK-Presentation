@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Resultados</title>
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css" id="theme">
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<!-- Custom Presentation Styles -->
+		<style>
+			.logo 
+			{
+				width: auto;
+				height: 20vh;
+			}
+			.results{
+				height : 80vh;
+				width : 80vw;
+			}
+
+			.dia{
+				height : 80vh;
+				width : 80vw;
+			}
+			.ivideo{
+				height : 60vh;
+				width : 80vw;
+			}
+
+			.left {
+				text-align: left;
+			}
+			.center {
+				text-align: center;
+			}
+			.justify{
+				text-align: justify;
+				padding-left: 5%;
+			}
+			.justify p,li::after{
+				content:"\a\a";
+			    white-space: pre;
+			}
+
+			.size {
+			font-size: 80px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Theme selection -->
+				<section id="themes">
+					<h2>Apariencia</h2>
+						<p>
+							Seleccione la apariencia de las diapositivas: <br>
+							<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/black.css'); return false;">Black</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/white.css'); return false;">White</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/league.css'); return false;">League</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/sky.css'); return false;">Sky</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/beige.css'); return false;">Beige</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/simple.css'); return false;">Simple</a> <br>
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/serif.css'); return false;">Serif</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/blood.css'); return false;">Blood</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/night.css'); return false;">Night</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/moon.css'); return false;">Moon</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/theme/solarized.css'); return false;">Solarized</a>
+						</p>
+				</section>
+
+                <section>
+                    <section>
+                        <h2>Resultados específicos para múltiples efectores finales</h2>
+                    </section>
+
+                    <section>
+                        <h2>Demos</h2>
+                    </section>
+
+					<section>
+						<h3>Humano</h3>
+						<iframe class = "ivideo"  data-src="videos/Humans.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+					<section>
+						<h3>Gato</h3>
+						<iframe class = "ivideo"  data-src="videos/Cat.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+					<section>
+						<h3>Araña</h3>
+						<iframe class = "ivideo"  data-src="videos/Spider.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+                    <section>
+						<h3>Tiranosaurio</h3>
+						<iframe class = "ivideo"  data-src="videos/Tyranno.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+                    <section>
+						<h3>Mono</h3>
+						<iframe class = "ivideo"  data-src="videos/Monkey.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+                    <section>
+						<h3>Dragón</h3>
+						<iframe class = "ivideo"  data-src="videos/Dragon.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+                    <section>
+                        <h2>Resultados por métrica</h2>
+                    </section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/DE.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/OE.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MT.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MPJPE.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+                    <section>
+                        <h2>Resultados generales</h2> 	
+                    </section>
+					
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MPJOE.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+
+
+                </section>
+
+
+            </div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				width: "120%",
+				height: "120%",
+				margin: 0.05,
+				hash: true,
+				math: {
+					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					// pass other options into `MathJax.Hub.Config()`
+					TeX: { Macros: { RR: "{\\bf R}" } }
+			    },
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+			});
+
+			// Change the size of our presentation
+			document.querySelector( '.reveal' ).style.width = '100vw';
+			document.querySelector( '.reveal' ).style.height = '100vh';
+
+			// Make reveal.js aware of the size change
+			Reveal.layout();			
+		</script>
+	</body>
+</html>

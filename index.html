@@ -108,7 +108,7 @@
 					</section>
 
 					<section>
-						<h3>Estructura articulada - (Estructura de esqueleto)</h3>
+						<h3><a href="notation.html#/1" target="_blank" style="color: blue;">Estructura articulada - (Estructura de esqueleto)</a></h3>
 						<figure class="fragment" data-fragment-index="4">
 							<img width = "60%" data-src='fig/1Skeleton.jpg'/>
 						</figure>
@@ -123,8 +123,8 @@
 						<div style="text-align: justify; float: left; width: 50%">
 							<h3 class="center">Cinemática directa</h3>
 							<br>
-							<p class="fragment center" data-fragment-index="2">$S_{d} = (^{0}\mathbf{q}_{d}, ^{0}\mathbf{o}_{d}) = f(^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n})$</p>
-							<div class="fragment" data-fragment-index="1">
+							<p class="fragment center" data-fragment-index="1">$S_{d} = (^{0}\mathbf{q}_{d}, ^{0}\mathbf{o}_{d}) = f(^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n})$</p>
+							<div class="fragment" data-fragment-index="2">
 								<iframe class = "ivideo"  data-src="videos/FK.webm" type="video/webm">
 								</iframe>
 							</div>
@@ -132,9 +132,9 @@
 						<div style="text-align: justify; float : left; width : 50%" class=embed-container >
 							<h3 class="center">Cinemática Inversa</h3>
 							<br>
-							<p class="fragment center" data-fragment-index="4"> $f^{-1}(S_{d}) = ^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n}$</p>
+							<p class="fragment center" data-fragment-index="3"> $f^{-1}(S_{d}) = ^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n}$</p>
 
-							<div class="fragment" data-fragment-index="3">
+							<div class="fragment" data-fragment-index="4">
 								<iframe class = "ivideo"  data-src="videos/IK.webm" type="video/webm">
 								</iframe>
 							</div>
@@ -252,8 +252,10 @@
 						<p class="fragment">
 							$\cos(\theta) = \mathbf{a} \, \cdot \, \mathbf{b} \qquad \mathbf{\hat{r}} = \frac{\mathbf{a}}{\left\rVert{\mathbf{a}}\right\rVert}  \, \times \, \frac{\mathbf{b}}{\left\lVert{\mathbf{b}}\right\rVert} $
 						</p>
-						<iframe class = "ivideo"  data-src="videos/CCD_Fast.mp4" type="video/mp4">
-						</iframe>
+						<div class="fragment">
+							<iframe class = "ivideo"  data-src="videos/CCD_Fast.mp4" type="video/mp4">
+							</iframe>
+						</div>
 					</section>
 
 					<section>
@@ -265,8 +267,10 @@
 							\mathbf{\hat{r}}=\frac{\mathbf{a}\times\mathbf{c}}{\left\rVert {\mathbf{a}} \right\rVert \left\rVert {\mathbf{c}} \right\rVert}
 							$
 						</p>
-						<iframe class = "ivideo"  data-src="videos/TIK_Fast.mp4" type="video/mp4">
-						</iframe>
+						<div class="fragment">
+							<iframe class = "ivideo"  data-src="videos/TIK_Fast.mp4" type="video/mp4">
+							</iframe>
+						</div>
 					</section>
 
 					<section>
@@ -285,8 +289,10 @@
 							\mathbf{p}_{i+1}'' = (1 - \lambda_i) \mathbf{p}_{i}'' + \lambda_i \mathbf{p}_{i+1}' $
 						</p>						
 
-						<iframe class = "ivideo"  data-src="videos/FABRIK_Fast.mp4" type="video/mp4">
-						</iframe>
+						<div class="fragment">
+							<iframe class = "ivideo"  data-src="videos/FABRIK_Fast.mp4" type="video/mp4">
+							</iframe>
+						</div>
 					</section>
 
 					<section>
@@ -380,7 +386,7 @@
 					<section>
 						<h3>Translate and Reach Inverse Kinematics (TRIK)</h3>
 						<p class="fragment" data-fragment-index="1">Inspirado en el algoritmo FABRIK pero trabaja directamente en el espacio de las orientaciones.</p>
-						<div class="fragment" data-fragment-index="3">
+						<div class="fragment" data-fragment-index="2">
 							<p> 
 								1. Reducir la distancia a $S_d$: $ {\mathbf{\Delta q}_i}=\left(cos\left(\frac{\theta}{2}\right),\mathbf{\hat{r}}\sin\left(\frac{\theta}{2}\right)\right) $ donde $ \cos(\theta) = \mathbf{a} \, \cdot \, \mathbf{b} $, $ \mathbf{\hat{r}} = \frac{\mathbf{a}}{\left\rVert{\mathbf{a}}\right\rVert}  \, \times \, \frac{\mathbf{b}}{\left\rVert{\mathbf{b}}\right\rVert} $,
 							</p>
@@ -388,10 +394,10 @@
 								$ \mathbf{a}={\boldsymbol{o}_{i+1}} $ y $ {\mathbf{b}={^{i}\mathbf{o}_{d}}+{\mathbf{o}_{i+1}}-{^{i}\mathbf{o}_{n}}} $							
 							</p>
 						</div>
-						<p class="fragment" data-fragment-index="3"> 
+						<p class="fragment" data-fragment-index="2"> 
 							2. Mantener la orientación global de $J_{i+1}$: $ {\mathbf{\Delta q}_{i+1}} = {{\mathbf{q}_{i+1}}^{*}} \, {{\mathbf{\Delta q}_i}^{*}} \, {\mathbf{q}_{i+1}} $ 
 						</p>
-						<div class="fragment" data-fragment-index="2	">
+						<div class="fragment" data-fragment-index="3">
 							<iframe class = "ivideo"  data-src="videos/TRIK_Fast.mp4" type="video/mp4">
 							</iframe>
 						</div>
@@ -467,14 +473,14 @@
 
 					<section>
 						<h3>Fixing orientation step (FIXO)</h3>
-						<p class="fragment" data-fragment-index="2"> Rotación sobre $J_{i}$ que minimiza la distancia orientacional: 
+						<p class="fragment" data-fragment-index="1"> Rotación sobre $J_{i}$ que minimiza la distancia orientacional: 
 							${\mathbf{\Delta q}_{i\_or}} = \left(cos\left(\frac{\theta_{or}}{2}\right),\mathbf{\hat{r}}\sin\left(\frac{\theta_{or}}{2}\right)\right) = {{^{0}\mathbf{q}_{i}}^{*}} \, {^{0}\mathbf{q}_{d}} \,  {^{i}{\mathbf{q}_{n}}^{*}} $
 						</p>
-						<p class="fragment" data-fragment-index="3"> 
+						<p class="fragment" data-fragment-index="2"> 
 							El ángulo $ {\theta}_{or} $ se limita de acuerdo a los pesos que se asocien a la distancia posicional y orientacional. 
 						</p>
 						<br>		
-						<div class = "fragment" data-fragment-index="1">		
+						<div class = "fragment" data-fragment-index="3">		
 							<iframe class = "ivideo"  data-src="videos/FIXO_Example_2.mp4" type="video/mp4">
 							</iframe>
 						</div>
@@ -685,43 +691,17 @@
 						</iframe>
 					</section>
 
-					<section><h1>Resultados</h1></section>
-
 					<section>
+						<h3>Resultados generales</h3>
 						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/resume.html">
 							<p>Your browser does not support iframes.</p>
 						  </iframe>						
 					</section>
 
 					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/DE.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
+						<h2> <a href="single_effector.html#/1" target="_blank" style="color: blue;">Resultados especificos</a></h2>
 					</section>
 
-					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/MT.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
-					</section>
-
-					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/MPJPD.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
-					</section>
-
-					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/MPJOD.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
-					</section>
-
-					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/GI.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
-					</section>
 				</section>				
 
 				<section>
@@ -831,47 +811,21 @@
 
 					<section>
 						<h3>Experimento - Reconstruccion del movimiento humano</h3>
-						<iframe class = "ivideo"  data-src="videos/Multiple_experiment.mp4" type="video/mp4">
+						<iframe class = "ivideo"  data-src="videos/Humans.mp4" type="video/mp4">
 						</iframe>
 					</section>
 
-
 					<section>
+						<h3>Resultados generales</h3>
 						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/resume.html">
 							<p>Your browser does not support iframes.</p>
 						  </iframe>						
 					</section>
 
 					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/DE.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
+						<h2> <a href="multiple_effectors.html#/1" target="_blank" style="color: blue;">Resultados especificos</a></h2>
 					</section>
 
-					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/OE.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
-					</section>
-
-
-					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MT.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
-					</section>
-
-					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MPJPE.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
-					</section>
-
-					<section>
-						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MPJOE.html">
-							<p>Your browser does not support iframes.</p>
-						  </iframe>						
-					</section>
 				</section>				
 
 				<section>
@@ -887,39 +841,7 @@
 							</li>
 							<li class = "fragment"> Se observó que <b>B&FIK$&lt; TRIK | ETIK&gt;$</b> fue, en general, la heurística con mejor desempeño destacándose sobre las demás en términos de precisión y escalabilidad. </li> 
 							<li class = "fragment"> Trabajo futuro: asignación de prioridades, uso de objetivos intermedios, estudiar interdependencia de articulaciones, automatizar la combinación de pasos heurísticos. </li> 
-
 						</ol>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h3>Notación</h3>
-						<br>
-						<ul class = "justify">
-							<li class="fragment">Dada una cadena cinemática $K = (J_1, J_2, ..., J_n)$ compuesta por n articulaciones.</li>
-							<li class="fragment"> $ J_i = ( ^{i-1}q_i, ^{i-1}o_i) $ describe una transformación rígida relativa a su padre $J_{i-1}$.</li>
-							<li class="fragment">La traslación se representa como el vector $^{i-1}o_i \in \mathbb{R}^3$</li>
-							<li class="fragment">La rotación de $ \theta $ radianes alrededor del vector unitario $ {\mathbf{\hat{u}}=(\hat{u}_{x},\hat{u}_{y},\hat{u}_{z})\in\mathbb{R}^{3}} $ se representa como el cuaternión unitario: 
-								<p style="text-align: center;"> $^{i-1}q_i = (w, \mathbf{v})= (w , x, y, z) = \left(cos\left(\frac{\theta}{2}\right), \mathbf{\hat{u}_x} sin\left(\frac{\theta}{2}\right), \mathbf{\hat{u}_y} sin\left(\frac{\theta}{2}\right), \mathbf{\hat{u}_z} sin\left(\frac{\theta}{2}\right)\right)  \in \mathbf{S}^3$ </p>
-							</li>
-							<li class="fragment"> Se define a la multiplicación entre dos cuaterniones como: 
-								<p style="text-align: center;"> $\mathbf{q_1} \mathbf{q_2} = (w_1 w_2 - \mathbf{v}_1 \cdot \mathbf{v}_2, w_1 \mathbf{v}_2 + w_2 \mathbf{v}_1 + \mathbf{v}_1 \times \mathbf{v}_2)$ </p> </li>			
-							<li class="fragment">El resultado de aplicar la rotación $\mathbf{^{i-1}q_i}$ sobre  el vector $\mathbf{x} $ se obtiene mediante la siguiente expresión: 
-								<p style="text-align: center;"> $\mathbf{x}' = \mathbf{^{i-1}q_i} \, \mathbf{x} \, \mathbf{^{i-1}q_i}^*$, donde $ \mathbf{^{i-1}q_i}^* =  (w, -x, -y, -z)$  </p>
-							</li>
-						</ul>
-					</section>
-
-					<section>
-						<h3>Articulaciones</h3>
-						<p class="fragment"> Podemos realizar transformaciónes entre sistemas de coordenadas utilizando las siguientes ecuaciones:
-							$ {^{i-1}\mathbf{x}} = \; {\mathbf{q}_{i}} \; {^{i}\mathbf{x}} \; {\mathbf{q}_{i}}^{*}  \; + \; {\mathbf{o}_{i}} \qquad \qquad
-							 {^{i}\mathbf{x}} = \; {\mathbf{q}_{i}^{*}} \; ({^{i-1}\mathbf{x}}  - {\mathbf{o}_i}) \: {\mathbf{q}_{i}} $
-						</p>
-						<div class="fragment">
-							<iframe class = "ivideo"  data-src="videos/Joints.mp4" type="video/mp4"></iframe>							
-						</div>
 					</section>
 				</section>
 			</div>
