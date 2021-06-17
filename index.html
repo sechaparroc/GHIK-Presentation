@@ -109,9 +109,15 @@
 
 					<section>
 						<h3><a href="notation.html#/1" target="_blank" style="color: blue;">Estructura articulada - (Estructura de esqueleto)</a></h3>
-						<figure class="fragment" data-fragment-index="4">
-							<img width = "60%" data-src='fig/1Skeleton.jpg'/>
-						</figure>
+
+						<div class="r-stack">
+							<figure class="fragment fade-in-then-out" data-fragment-index="1">
+								<img width = "60%" data-src='fig/1Fig_to_Skeleton.png'/>
+							</figure>
+							<figure class="fragment fade-in-then-out" data-fragment-index="2">
+								<img width = "60%" data-src='fig/1Skeleton.png'/>
+							</figure>
+						</div>
 					</section>
 
 
@@ -124,7 +130,7 @@
 							<h3 class="center">Cinemática directa</h3>
 							<br>
 							<p class="fragment center" data-fragment-index="1">$S_{d} = (^{0}\mathbf{q}_{d}, ^{0}\mathbf{o}_{d}) = f(^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n})$</p>
-							<div class="fragment" data-fragment-index="2">
+							<div class="fragment" data-fragment-index="1">
 								<iframe class = "ivideo"  data-src="videos/FK.webm" type="video/webm">
 								</iframe>
 							</div>
@@ -132,9 +138,9 @@
 						<div style="text-align: justify; float : left; width : 50%" class=embed-container >
 							<h3 class="center">Cinemática Inversa</h3>
 							<br>
-							<p class="fragment center" data-fragment-index="3"> $f^{-1}(S_{d}) = ^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n}$</p>
+							<p class="fragment center" data-fragment-index="2"> $f^{-1}(S_{d}) = ^{0}\mathbf{q}_{1}, ^{1}\mathbf{q}_{2}, ..., ^{n-1}\mathbf{q}_{n}$</p>
 
-							<div class="fragment" data-fragment-index="4">
+							<div class="fragment" data-fragment-index="2">
 								<iframe class = "ivideo"  data-src="videos/IK.webm" type="video/webm">
 								</iframe>
 							</div>
@@ -248,11 +254,13 @@
 
 					<section>
 						<h3>Cyclic Coordinate Descent (CCD)</h3>
-						<p class="fragment">Encuentra la rotación que alinea a los vectores: $ \mathbf{a}={^{i}\mathbf{o}_{n}} $ y $ \mathbf{b}={^{i}\mathbf{o}_{d}} $</p>
-						<p class="fragment">
+						<div style="font-size: 0.8em;">
+						<p class="fragment" data-fragment-index="1">Encuentra la rotación que alinea a los vectores: $ \mathbf{a}={^{i}\mathbf{o}_{n}} $ y $ \mathbf{b}={^{i}\mathbf{o}_{d}} $</p>
+						<p class="fragment" data-fragment-index="1">
 							$\cos(\theta) = \mathbf{a} \, \cdot \, \mathbf{b} \qquad \mathbf{\hat{r}} = \frac{\mathbf{a}}{\left\rVert{\mathbf{a}}\right\rVert}  \, \times \, \frac{\mathbf{b}}{\left\lVert{\mathbf{b}}\right\rVert} $
 						</p>
-						<div class="fragment">
+						</div>
+						<div class="fragment" data-fragment-index="1">
 							<iframe class = "ivideo"  data-src="videos/CCD_Fast.mp4" type="video/mp4">
 							</iframe>
 						</div>
@@ -260,14 +268,16 @@
 
 					<section>
 						<h3>Triangulation (TIK)</h3>
-						<p class="fragment"> Si los vectores $ {\mathbf{a}={^{i}\mathbf{o}_{i+1}}} $, $ \mathbf{b}={^{i}\mathbf{o}_{n}}-{^{i}\mathbf{o}_{i+1}} $, y $ \mathbf{c}={^{i}\mathbf{o_{d}}} $ forman un triangulo el desplazamiento de $J_i$ es: </p>
-						<p class="fragment">
+						<div style="font-size: 0.8em;">
+						<p class="fragment" data-fragment-index="1"> Si los vectores $ {\mathbf{a}={^{i}\mathbf{o}_{i+1}}} $, $ \mathbf{b}={^{i}\mathbf{o}_{n}}-{^{i}\mathbf{o}_{i+1}} $, y $ \mathbf{c}={^{i}\mathbf{o_{d}}} $ forman un triangulo el desplazamiento de $J_i$ es: </p>
+						<p class="fragment" data-fragment-index="1">
 							$\theta=\cos^{-1}(\mathbf{a}\cdot\mathbf{c})-\cos^{-1}\left(\frac{\mathbf{a}\cdot\mathbf{a}\,+\,\mathbf{c}\cdot\mathbf{c}\,-\,\mathbf{b}\cdot\mathbf{b}}{2\left\rVert {\mathbf{a}} \right\rVert \left\rVert {\mathbf{c}} \right\rVert}\right)\, 
 							\qquad
 							\mathbf{\hat{r}}=\frac{\mathbf{a}\times\mathbf{c}}{\left\rVert {\mathbf{a}} \right\rVert \left\rVert {\mathbf{c}} \right\rVert}
 							$
 						</p>
-						<div class="fragment">
+						</div>
+						<div class="fragment" data-fragment-index="1">
 							<iframe class = "ivideo"  data-src="videos/TIK_Fast.mp4" type="video/mp4">
 							</iframe>
 						</div>
@@ -275,20 +285,20 @@
 
 					<section>
 						<h3>Forward and Backward Reaching Inverse Kinematics (FABRIK)</h3>
-						<p class="fragment"> Sea la posición global de las articulaciones  $ \mathbf{p}_1 = {^{0}\mathbf{o}_{1}}, \mathbf{p}_2 = {^{0}\mathbf{o}_{2}}, … \mathbf{p}_n = {^{0}\mathbf{o}_{n}}$ y sea $ d_i = \left\rVert{\mathbf{p}_{i+1} \, - \, \mathbf{p}_{i}} \right\rVert $ </p>						
-
-						<p class="fragment"> Fase hacia adelante:
+						<div style="font-size: 0.8em;">
+						<p class="fragment" data-fragment-index="1"> Sea la posición global de las articulaciones  $ \mathbf{p}_1 = {^{0}\mathbf{o}_{1}}, \mathbf{p}_2 = {^{0}\mathbf{o}_{2}}, … \mathbf{p}_n = {^{0}\mathbf{o}_{n}}$ y sea $ d_i = \left\rVert{\mathbf{p}_{i+1} \, - \, \mathbf{p}_{i}} \right\rVert $ </p>						
+						<p class="fragment" data-fragment-index="1"> Fase hacia adelante:
 							 $\lambda_i = \frac{d_i}{\left\rVert{\mathbf{p}_{i+1}' \, - \, \mathbf{p}_{i}} \right\rVert }
 							 \qquad
 							 \mathbf{p}_i' = (1 - \lambda_i) \mathbf{p}_{i+1}' + \lambda_i \mathbf{p}_i $
 						</p>						
 
-						<p class="fragment"> Fase hacia atrás:
+						<p class="fragment" data-fragment-index="1"> Fase hacia atrás:
 							$\lambda_i = \frac{d_i}{\left\rVert{\mathbf{p}_{i+1}' \, - \, \mathbf{p}_{i}''}\right\rVert}
 							\qquad
 							\mathbf{p}_{i+1}'' = (1 - \lambda_i) \mathbf{p}_{i}'' + \lambda_i \mathbf{p}_{i+1}' $
 						</p>						
-
+						</div>
 						<div class="fragment">
 							<iframe class = "ivideo"  data-src="videos/FABRIK_Fast.mp4" type="video/mp4">
 							</iframe>
@@ -338,14 +348,11 @@
 					</section>
 
 					<section>
-						<h3>Paso heurístico</h3>
-						<br>	
-						<ul class="justify">
-							<li class = "fragment"> Se define en el espacio de las orientaciones usando algebra de cuaterniones.</li>
-							<li class = "fragment"> Se aplica un desplazamiento rotacional $ {\mathbf{\Delta q}_i} $ sobre una articulacion $J_i$ o $ ({\mathbf{\Delta q}_i},{\mathbf{\Delta q}}_{i+1}) $ una pareja de articulaciones $(J_i, J_{i+1})$.</li>
-							<li class = "fragment"> Siempre se genera una nueva pose factible cuya distancia al objetivo disminuye o se mantiene.</li>
-							<li class = "fragment"> <b>Dadas sus caracteristicas pueden aplicarse en un orden arbitrario y pueden combinarse. </b></li>
-						</ul>	
+						<h3>Definición de paso heurístico</h3>
+						<br>
+						<figure class="fragment">
+							<img width = "95%" data-src='fig/paso_heuristico.png'/>
+						</figure>
 					</section>
 
 					<section>
@@ -362,15 +369,17 @@
 						<div style="text-align: center; float : left; width : 50%;" class=embed-container >
 							<br>
 							<div >
-								<img width = "50%" data-src='fig/TIK1.jpg'/>
+								<img width = "50%" data-src='fig/TIK1.png'/>
 								<p>$ {\mathbf{\Delta q}_{i\_a}}=\left(\cos\left(\frac{\theta_{c} - \theta_{e}}{2}\right), \mathbf{\hat{r}}\sin\left(\frac{\theta_{c} - \theta_{e}}{2}\right)\right) $</p>
 								<p>$ {\mathbf{\Delta q}_{i+1}} = CCD(J_{i+1}) $</p>
 							</div>
 						</div>
+						</div>
+						<div class = "fragment" data-fragment-index="3" style="margin-top: -50px; padding: 0%;">
 						<div style="text-align: justify-all; float : left; width : 50%" class=embed-container >
 							<br>
 							<div >
-								<img width = "50%" data-src='fig/TIK2.jpg'/>
+								<img width = "50%" data-src='fig/TIK2.png'/>
 								<p>$ {\mathbf{\Delta q}_{i\_b}}=\left(cos\left(\frac{\theta_{c} + \theta_{e}}{2}\right),\mathbf{\hat{r}}\sin\left(\frac{\theta_{c} + \theta_{e}}{2}\right)\right) $</p>
 								<p>$ {\mathbf{\Delta q}_{i+1}} = CCD(J_{i+1}) $</p>
 							</div>
@@ -385,19 +394,17 @@
 
 					<section>
 						<h3>Translate and Reach Inverse Kinematics (TRIK)</h3>
-						<p class="fragment" data-fragment-index="1">Inspirado en el algoritmo FABRIK pero trabaja directamente en el espacio de las orientaciones.</p>
-						<div class="fragment" data-fragment-index="2">
+						<p class="fragment" data-fragment-index="1">Inspirado en el algoritmo FABRIK pero trabaja directamente en el espacio de las orientaciones. Considera el movimiento de una pareja de articulaciones $(J_i, J_{i+1})$.</p>
+						<div class="fragment" data-fragment-index="2" style="font-size: 0.8em;">
 							<p> 
 								1. Reducir la distancia a $S_d$: $ {\mathbf{\Delta q}_i}=\left(cos\left(\frac{\theta}{2}\right),\mathbf{\hat{r}}\sin\left(\frac{\theta}{2}\right)\right) $ donde $ \cos(\theta) = \mathbf{a} \, \cdot \, \mathbf{b} $, $ \mathbf{\hat{r}} = \frac{\mathbf{a}}{\left\rVert{\mathbf{a}}\right\rVert}  \, \times \, \frac{\mathbf{b}}{\left\rVert{\mathbf{b}}\right\rVert} $,
-							</p>
-							<p>
 								$ \mathbf{a}={\boldsymbol{o}_{i+1}} $ y $ {\mathbf{b}={^{i}\mathbf{o}_{d}}+{\mathbf{o}_{i+1}}-{^{i}\mathbf{o}_{n}}} $							
 							</p>
 						</div>
-						<p class="fragment" data-fragment-index="2"> 
+						<p class="fragment" data-fragment-index="2" style="font-size: 0.8em;"> 
 							2. Mantener la orientación global de $J_{i+1}$: $ {\mathbf{\Delta q}_{i+1}} = {{\mathbf{q}_{i+1}}^{*}} \, {{\mathbf{\Delta q}_i}^{*}} \, {\mathbf{q}_{i+1}} $ 
 						</p>
-						<div class="fragment" data-fragment-index="3">
+						<div class="fragment" data-fragment-index="2">
 							<iframe class = "ivideo"  data-src="videos/TRIK_Fast.mp4" type="video/mp4">
 							</iframe>
 						</div>
@@ -495,7 +502,7 @@
 						<h3> Algoritmo GHIK para cadenas cinemáticas</h3>
 						<p class="fragment justify">Dada la cadena $ K=(J_{1},\ldots,J_{n}) $ el algoritmo <b><a href="https://app.creately.com/diagram/9BDHQxBKFXK/" style="color: blue;">Generic Heuristic Inverse Kinematics</a></b> (GHIK) se encarga de:</p>
 						<figure class="fragment">
-							<img width = "95%" data-src='fig/GHIK.png'/>
+							<img width = "95%" data-src='fig/ghik.png'/>
 						</figure>
 
 					</section>
@@ -541,7 +548,7 @@
 							<div class="fragment" data-fragment-index="3">
 								<p class="fragment" style="text-align: justify;"> Se debe utilizar la información de los efectores finales para definir los objetivos de las cadenas internas.</p>
 								<div class="fragment">
-								<img data-src='fig/GHIKSkeleton.jpg' style="height: 60vh; margin-top: 0%;"/>
+								<img data-src='fig/GHIKSkeleton.png' style="height: 60vh; margin-top: 0%;"/>
 								</div>
 							</div>
 						</div>
@@ -630,19 +637,19 @@
 						<div style="text-align: justify-all; float : left; width : 40%" class=embed-container >
 							<div class="r-stack">
 								<figure class="fragment fade-in-then-out" data-fragment-index="2">
-									<img width = "50%" data-src='fig/irrestrictas.jpg'/>
+									<img width = "50%" data-src='fig/irrestrictas.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="3">
-									<img width = "50%" data-src='fig/bisagra.jpg'/>
+									<img width = "50%" data-src='fig/bisagra.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="4">
-									<img width = "50%" data-src='fig/conicas.jpg'/>
+									<img width = "50%" data-src='fig/conicas.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="5">
-									<img width = "50%" data-src='fig/mixtas.jpg'/>
+									<img width = "50%" data-src='fig/mixtas.png'/>
 								</figure>
 								<figure class="fragment fade-in" data-fragment-index="6">
-									<img width = "80%" data-src='fig/cadenas.jpg'/>
+									<img width = "80%" data-src='fig/cadenas.png'/>
 								</figure>
 							</div>
 						</div>
@@ -667,16 +674,16 @@
 						<div style="text-align: justify-all; float : left; width : 40%" class=embed-container >
 							<div class="r-stack">
 								<figure class="fragment fade-in-then-out" data-fragment-index="2">
-									<img width = "80%" data-src='fig/DE.jpg'/>
+									<img width = "80%" data-src='fig/DE.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="4">
-									<img width = "80%" data-src='fig/MT.jpg'/>
+									<img width = "80%" data-src='fig/MT.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="6">
-									<img width = "80%" data-src='fig/DPMPA.jpg'/>
+									<img width = "80%" data-src='fig/DPMPA.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="8">
-									<img width = "80%" data-src='fig/DOMPA.jpg'/>
+									<img width = "80%" data-src='fig/DOMPA.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="10">
 									<img width = "80%" data-src='fig/IG2.jpg'/>
@@ -699,7 +706,7 @@
 					</section>
 
 					<section>
-						<h2> <a href="single_effector.html#/1" target="_blank" style="color: blue;">Resultados especificos</a></h2>
+						<h2> <a href="single_effector.html#/1" target="_blank" style="color: blue;">Resultados específicos</a></h2>
 					</section>
 
 				</section>				
@@ -735,39 +742,39 @@
 							<div class="fragment" data-fragment-index="1">
 								<div class="r-stack">
 									<figure class="fragment fade-in-then-out" data-fragment-index="2">
-										<img width = "80%" data-src='fig/humano.jpg'/>
+										<img width = "80%" data-src='fig/humano.png'/>
 										<p>Articulaciones: 23</p>
 										<p>Efectores finales: 5</p>
 									</figure>
 									<figure class="fragment fade-in-then-out" data-fragment-index="3">
-										<img width = "80%" data-src='fig/gato.jpg'/>
+										<img width = "80%" data-src='fig/gato.png'/>
 										<p>Articulaciones: 44</p>
 										<p>Efectores finales: 11</p>
 									</figure>
 									<figure class="fragment fade-in-then-out" data-fragment-index="4">
-										<img width = "80%" data-src='fig/arana.jpg'/>
+										<img width = "80%" data-src='fig/arana.png'/>
 										<p>Articulaciones: 62</p>
 										<p>Efectores finales: 14</p>
 									</figure>
 									<figure class="fragment fade-in-then-out" data-fragment-index="5">
-										<img width = "80%" data-src='fig/tirano.jpg'/>
+										<img width = "80%" data-src='fig/tirano.png'/>
 										<p>Articulaciones: 69</p>
 										<p>Efectores finales: 16</p>
 									</figure>
 									<figure class="fragment fade-in-then-out" data-fragment-index="6">
-										<img width = "80%" data-src='fig/mono.jpg'/>
+										<img width = "80%" data-src='fig/mono.png'/>
 										<p>Articulaciones: 86</p>
 										<p>Efectores finales: 22</p>
 									</figure>
 
 									<figure class="fragment fade-in-then-out" data-fragment-index="7">
-										<img width = "80%" data-src='fig/dragon.jpg'/>
+										<img width = "80%" data-src='fig/dragon.png'/>
 										<p>Articulaciones: 143</p>
 										<p>Efectores finales: 40</p>
 									</figure>
 
 									<figure class="fragment fade-in" data-fragment-index="8">
-										<img width = "90%" data-src='fig/multiples.jpg'/>
+										<img width = "90%" data-src='fig/multiples.png'/>
 									</figure>
 								</div>
 							</div>
@@ -791,19 +798,19 @@
 						<div style="text-align: justify-all; float : left; width : 40%" class=embed-container >
 							<div class="r-stack">
 								<figure class="fragment fade-in-then-out" data-fragment-index="2">
-									<img width = "80%" data-src='fig/DPM.jpg'/>
+									<img width = "80%" data-src='fig/DPM.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="4">
-									<img width = "80%" data-src='fig/DOM.jpg'/>
+									<img width = "80%" data-src='fig/DOM.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="6">
-									<img width = "60%" data-src='fig/MTM.jpg'/>
+									<img width = "60%" data-src='fig/MTM.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="8">
-									<img width = "60%" data-src='fig/EPMPA.jpg'/>
+									<img width = "60%" data-src='fig/EPMPA.png'/>
 								</figure>
 								<figure class="fragment fade-in-then-out" data-fragment-index="10">
-									<img width = "80%" data-src='fig/EOMPA.jpg'/>
+									<img width = "80%" data-src='fig/EOMPA.png'/>
 								</figure>
 							</div>
 						</div>
@@ -823,7 +830,7 @@
 					</section>
 
 					<section>
-						<h2> <a href="multiple_effectors.html#/1" target="_blank" style="color: blue;">Resultados especificos</a></h2>
+						<h2> <a href="multiple_effectors.html#/1" target="_blank" style="color: blue;">Resultados específicos</a></h2>
 					</section>
 
 				</section>				
