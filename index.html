@@ -231,7 +231,7 @@
 					<section>
 						<h3>Métodos de cinemática inversa</h3>
 						<br>
-						<p class="fragment justify">Para aplicaciones en tiempo real se requieren métodos que cumplan con los siguientes criterios (Aristidou et al.):</p>
+						<p class="fragment justify">Para aplicaciones en tiempo real se requieren métodos que cumplan con los <a href="http://andreasaristidou.com/InverseKinematics.html" style="color: blue;">siguientes criterios:</a></p>
 						<figure class="fragment">
 							<img width = "95%" data-src='fig/criterios.png'/>
 						</figure>
@@ -253,7 +253,7 @@
 					</section>
 
 					<section>
-						<h3>Cyclic Coordinate Descent (CCD)</h3>
+						<h3><a href = "https://www.tandfonline.com/doi/abs/10.1080/2165347X.2013.823362" style="color: blue;">Cyclic Coordinate Descent (CCD)</a></h3>
 						<div style="font-size: 0.8em;">
 						<p class="fragment" data-fragment-index="1">Encuentra la rotación que alinea a los vectores: $ \mathbf{a}={^{i}\mathbf{o}_{n}} $ y $ \mathbf{b}={^{i}\mathbf{o}_{d}} $</p>
 						<p class="fragment" data-fragment-index="1">
@@ -267,7 +267,7 @@
 					</section>
 
 					<section>
-						<h3>Triangulation (TIK)</h3>
+						<h3><a href = "https://ir.canterbury.ac.nz/handle/10092/743" style="color: blue;">Triangulation (TIK)</a></h3>
 						<div style="font-size: 0.8em;">
 						<p class="fragment" data-fragment-index="1"> Si los vectores $ {\mathbf{a}={^{i}\mathbf{o}_{i+1}}} $, $ \mathbf{b}={^{i}\mathbf{o}_{n}}-{^{i}\mathbf{o}_{i+1}} $, y $ \mathbf{c}={^{i}\mathbf{o_{d}}} $ forman un triangulo el desplazamiento de $J_i$ es: </p>
 						<p class="fragment" data-fragment-index="1">
@@ -284,7 +284,7 @@
 					</section>
 
 					<section>
-						<h3>Forward and Backward Reaching Inverse Kinematics (FABRIK)</h3>
+						<h3><a href = "https://www.sciencedirect.com/science/article/abs/pii/S1524070311000178" style="color: blue;">Forward and Backward Reaching Inverse Kinematics (FABRIK)</a></h3>
 						<div style="font-size: 0.8em;">
 						<p class="fragment" data-fragment-index="1"> Sea la posición global de las articulaciones  $ \mathbf{p}_1 = {^{0}\mathbf{o}_{1}}, \mathbf{p}_2 = {^{0}\mathbf{o}_{2}}, … \mathbf{p}_n = {^{0}\mathbf{o}_{n}}$ y sea $ d_i = \left\rVert{\mathbf{p}_{i+1} \, - \, \mathbf{p}_{i}} \right\rVert $ </p>						
 						<p class="fragment" data-fragment-index="1"> Fase hacia adelante:
@@ -469,11 +469,10 @@
 						<br>
 						<ul>
 							<li class="fragment">Permite el uso de objetivos de posición y de orientación.</li>
-							<li class="fragment">Se define la distancia como una combinación lineal del error posicional $d_p$ y el orientacional $d_o$: </li>
-							<li class="fragment" style="list-style-type: none; text-align: center;"> 
-								$d(J_n, S_d) = w_p \, d_{p}(J_n, S_d) + w_o \, d_{o}(J_n, S_d)$
-							</li>
-							<li class="fragment">Considera el movimiento de una articuación $J_i$ y se utiliza después de aplicar un paso heurístico que disminuya la distancia posicional.</li>
+							<li class="fragment">Considera el movimiento de una articulación $J_i$ teniendo en cuenta: </li>
+							<figure class="fragment">
+								<img width = "100%" data-src='fig/FIXO.png'/>
+							</figure>
 						</ul>
 					</section>
 
@@ -483,11 +482,11 @@
 						<p class="fragment" data-fragment-index="1"> Rotación sobre $J_{i}$ que minimiza la distancia orientacional: 
 							${\mathbf{\Delta q}_{i\_or}} = \left(cos\left(\frac{\theta_{or}}{2}\right),\mathbf{\hat{r}}\sin\left(\frac{\theta_{or}}{2}\right)\right) = {{^{0}\mathbf{q}_{i}}^{*}} \, {^{0}\mathbf{q}_{d}} \,  {^{i}{\mathbf{q}_{n}}^{*}} $
 						</p>
-						<p class="fragment" data-fragment-index="2"> 
+						<p class="fragment" data-fragment-index="1"> 
 							El ángulo $ {\theta}_{or} $ se limita de acuerdo a los pesos que se asocien a la distancia posicional y orientacional. 
 						</p>
 						<br>		
-						<div class = "fragment" data-fragment-index="3">		
+						<div class = "fragment" data-fragment-index="1">		
 							<iframe class = "ivideo"  data-src="videos/FIXO_Example_2.mp4" type="video/mp4">
 							</iframe>
 						</div>
@@ -538,7 +537,7 @@
 					<section>
 						<h3> Division de la estructura articulada </h3>
 						<div style="text-align: justify; float: left; width: 50%">
-							<p class="fragment" style="margin-right: 5%;"> Algoritmo recursivo: Si una articulación tiene más de un hijo debe crearse una nueva cadena.</p>
+							<p class="fragment" style="margin-right: 5%;"> <b>Algoritmo recursivo:</b> Se visitan todas las articulaciones con una búsqueda en profundidad. Si una articulación tiene más de un hijo debe crearse una nueva cadena.</p>
 							<div class="fragment" >
 								<iframe class = "ivideo"  data-src="videos/GHIK_subdivision.mp4" type="video/mp4">
 								</iframe>
@@ -546,8 +545,9 @@
 						</div>
 						<div style="text-align: center; float : left; width : 50%" class=embed-container >
 							<div class="fragment" data-fragment-index="3">
-								<p class="fragment" style="text-align: justify;"> Se debe utilizar la información de los efectores finales para definir los objetivos de las cadenas internas.</p>
+								<p class="fragment" style="text-align: justify;"> Sólo las cadenas externas tienen objetivos asociados. Se utiliza esta información para determinar los objetivos de las cadenas internas.</p>
 								<div class="fragment">
+									
 								<img data-src='fig/GHIKSkeleton.png' style="height: 60vh; margin-top: 0%;"/>
 								</div>
 							</div>
@@ -577,33 +577,18 @@
 					-->
 
 					<section>
-						<h3> Definición de los objetivos de las cadenas internas</h3>
-						<div style="text-align: justify; float: left; width: 50%">
-							<br>
-							<p class="fragment"> El objetivo asociado a una cadena interna debe minimizar la distancia entre dos conjuntos:</p>
-							<ul style="text-align: left; font-size: 1em !important;">
-							<br>
-							<li class="fragment"> $ A={\{\mathbf{a_{i}}\}}_{i=1}^{m} $: Los efectores finales descendientes de la cadena.</li>
-							<br>
-							<li class="fragment"> $ B={\{\mathbf{b_{i}}\}}_{i=1}^{m} $: El objetivo asociado a cada efector final descendiente de la cadena. </li>
-							<br>
-							<li class="fragment"> Es equivalente a resolver el problema de registro rígido: 
-								<br>
-								$$ argmin \sum_{i=1}^{m} w_i \left\rVert{\mathbf{b_i} - \mathrm{R} \mathbf{a_i} + \mathbf{t}}\right\rVert $$ </li>
-							<br>
-							</ul>
-						</div>
-	
-						<div style="text-align: center; float : left; width : 50%" class=embed-container >
-							<div class="fragment">
-								<br> <br> 
-								<br> <br>
-								<iframe class = "ivideo"  data-src="videos/registration.mp4" type="video/mp4">
-								</iframe>
-							</div>
+						<h3>Definición de los objetivos de las cadenas internas</h3>
+						<p class="fragment" data-fragment-index="1"> Para cada cadena interna se resuelve el el problema de registro rígido: 
+							$ argmin \sum_{i=1}^{m} w_i \left\rVert{\mathbf{b_i} - \mathrm{R} \mathbf{a_i} + \mathbf{t}}\right\rVert $ donde:
+						</p>
+						<p class="fragment" data-fragment-index="1"> $ A={\{\mathbf{a_{i}}\}}_{i=1}^{m} $: Efectores finales descendientes de la cadena interna.</p>
+						<p class="fragment" data-fragment-index="1"> $ B={\{\mathbf{b_{i}}\}}_{i=1}^{m} $: Objetivos asociados a cada efector final de $ A $. </p>
+						<br>		
+						<div class = "fragment" data-fragment-index="1">		
+							<iframe class = "ivideo"  data-src="videos/registration.mp4" type="video/mp4">
+							</iframe>
 						</div>
 					</section>
-	
 				</section>			
 
 
@@ -657,6 +642,13 @@
 					</section>
 
 					<section>
+						<h3>Experimento - Ejemplo con restricciones cónicas</h3>
+						<iframe class = "ivideo"  data-src="videos/Chains_experiment.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+
+					<section>
 						<h3>Métricas</h3>
 						<div style="text-align: justify; float: left; width: 60%">
 							<br>
@@ -693,21 +685,76 @@
 					</section>
 
 					<section>
-						<h3>Experimento - Ejemplo con restricciones cónicas</h3>
-						<iframe class = "ivideo"  data-src="videos/Chains_experiment.mp4" type="video/mp4">
-						</iframe>
-					</section>
-
-					<section>
 						<h3>Resultados generales</h3>
 						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/resume.html">
 							<p>Your browser does not support iframes.</p>
 						  </iframe>						
 					</section>
 
-					<section>
+					<!--<section>
 						<h2> <a href="single_effector.html#/1" target="_blank" style="color: blue;">Resultados específicos</a></h2>
+					</section>-->
+                    <section>
+                        <h2>Resultados específicos para cadenas cinemáticas</h2>
+                    </section>
+
+                    <section>
+                        <h2>Demos</h2>
+                    </section>
+
+					<section>
+						<h3>Cadenas irrestrictas</h3>
+						<iframe class = "ivideo"  data-src="videos/unconstrained_chains.mp4" type="video/mp4">
+						</iframe>
 					</section>
+
+					<section>
+						<h3>Cadenas con restricciones</h3>
+						<iframe class = "ivideo"  data-src="videos/Chains_experiment.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+					<section>
+						<h3>FABRIK vs TRIK - Suavidad visual</h3>
+						<iframe class = "ivideo"  data-src="videos/FABRIKvsTRIK.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+                    <section>
+                        <h2>Resultados por métrica</h2>
+                    </section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/DE.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/MT.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/MPJPD.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/MPJOD.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/single/GI.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+
 
 				</section>				
 
@@ -719,9 +766,7 @@
 						<div style="text-align: justify; float: left; width: 60%">
 							<ul style="text-align: justify; font-size: 1em !important;">
 							<br>
-							<li class="fragment" data-fragment-index="1"> Se planteó la reconstrucción del movimiento a partir de la información del movimiento de los efectores finales.
-							</li>
-							<li class="fragment" data-fragment-index="2"> Se utilizaron estructuras altamente restrictas con distinta topología y capacidad de movimiento:
+							<li class="fragment" data-fragment-index="1"> Se planteó la reconstrucción del movimiento de estructuras altamente restrictas con distinta topología y capacidad de movimiento:<br>
 									<span class = "fragment" data-fragment-index="2"> a) Humano, </span>
 									<span class = "fragment" data-fragment-index="3"> b) Gato, </span>
 									<span class = "fragment" data-fragment-index="4"> c) Araña, </span>
@@ -737,6 +782,7 @@
 
 							</ul>
 						</div>
+
 						<div style="text-align: justify-all; float : left; width : 40%" class=embed-container >
 							<br>
 							<div class="fragment" data-fragment-index="1">
@@ -782,6 +828,12 @@
 					</section>
 
 					<section>
+						<h3>Experimento - Reconstruccion del movimiento humano</h3>
+						<iframe class = "ivideo"  data-src="videos/Humans.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+					<section>
 						<h3>Métricas</h3>
 						<div style="text-align: justify; float: left; width: 60%">
 							<br>
@@ -817,20 +869,86 @@
 					</section>
 
 					<section>
-						<h3>Experimento - Reconstruccion del movimiento humano</h3>
-						<iframe class = "ivideo"  data-src="videos/Humans.mp4" type="video/mp4">
-						</iframe>
-					</section>
-
-					<section>
 						<h3>Resultados generales</h3>
 						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/resume.html">
 							<p>Your browser does not support iframes.</p>
 						  </iframe>						
 					</section>
 
-					<section>
+					<!--<section>
 						<h2> <a href="multiple_effectors.html#/1" target="_blank" style="color: blue;">Resultados específicos</a></h2>
+					</section>-->
+                    <section>
+                        <h2>Resultados específicos para múltiples efectores finales</h2>
+                    </section>
+
+                    <section>
+                        <h2>Demos</h2>
+                    </section>
+
+					<section>
+						<h3>Humano</h3>
+						<iframe class = "ivideo"  data-src="videos/Humans.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+					<section>
+						<h3>Gato</h3>
+						<iframe class = "ivideo"  data-src="videos/Cat.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+					<section>
+						<h3>Araña</h3>
+						<iframe class = "ivideo"  data-src="videos/Spider.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+                    <section>
+						<h3>Tiranosaurio</h3>
+						<iframe class = "ivideo"  data-src="videos/Tyranno.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+                    <section>
+						<h3>Mono</h3>
+						<iframe class = "ivideo"  data-src="videos/Monkey.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+                    <section>
+						<h3>Dragón</h3>
+						<iframe class = "ivideo"  data-src="videos/Dragon.mp4" type="video/mp4">
+						</iframe>
+					</section>
+
+                    <section>
+                        <h2>Resultados por métrica</h2>
+                    </section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/DE.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/OE.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MT.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
+					</section>
+
+					<section>
+						<iframe class = "results" marginheight="0" marginwidth="0" data-src="generated_html/multiple/MPJPE.html">
+							<p>Your browser does not support iframes.</p>
+						  </iframe>						
 					</section>
 
 				</section>				
@@ -839,17 +957,15 @@
 					<section><h1>Conclusiones</h1></section>
 					<section>
 						<h3> Conclusiones</h3>
-						<br>
-						<ol class="justify">
-							<li class = "fragment"> Se presentó un método heurístico de cinemática inversa en tiempo real para estructuras articuladas altamente restrictas, con múltiples efectores finales y con objetivos tanto posicionales como orientacionales: <b> GHIK </b></li> 
-							<li class = "fragment"> Se definieron diversas heurísticas resultado de analizar el comportamiento de los algoritmos heurísticos en el estado del arte: <b>TRIK, FIXO, B&FIK</b></li> 
-							<li class = "fragment"> Se desarrolló un conjunto de experimentos sobre una gran variedad de estructuras articuladas con restricciones para evaluar y comparar el desempeño del metodo propuesto en términos de:
-								<b>precisión, eficiencia, escalabilidad, suavidad visual.</b>
-							</li>
-							<li class = "fragment"> Se observó que <b>B&FIK$&lt; TRIK | ETIK&gt;$</b> fue, en general, la heurística con mejor desempeño destacándose sobre las demás en términos de precisión y escalabilidad. </li> 
-							<li class = "fragment"> Trabajo futuro: asignación de prioridades, uso de objetivos intermedios, estudiar interdependencia de articulaciones, automatizar la combinación de pasos heurísticos. </li> 
-						</ol>
+						<figure class="fragment">
+							<img width = "95%" data-src='fig/conclusiones.png'/>
+						</figure>
+
 					</section>
+				</section>
+
+				<section>
+					<h2>Gracias por su atención.</h2>
 				</section>
 			</div>
 		</div>
