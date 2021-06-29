@@ -110,12 +110,9 @@
 					<section>
 						<h3><a href="notation.html#/1" target="_blank" style="color: blue;">Estructura articulada - (Estructura de esqueleto)</a></h3>
 
-						<div class="r-stack">
-							<figure class="fragment fade-in-then-out" data-fragment-index="1">
-								<img width = "60%" data-src='fig/1Fig_to_Skeleton.png'/>
-							</figure>
-							<figure class="fragment fade-in-then-out" data-fragment-index="2">
-								<img width = "60%" data-src='fig/1Skeleton.png'/>
+						<div>
+							<figure class = "fragment" data-fragment-index="1">
+								<img width = "90%" data-src='fig/1Fig_to_Skeleton.png'/>
 							</figure>
 						</div>
 					</section>
@@ -152,23 +149,24 @@
 					</section>
 
 					<section>
+						<p class="fragment" data-fragment-index="1" style="margin-right: 5%;"> Se desea que los movimientos producidos sean visualmente atractivos e imiten a los observados en la naturaleza. </p>
 						<div style="text-align: justify; float: left; width: 50%">
-							<p class="fragment" style="margin-right: 5%;"> Se desea que los movimientos producidos sean visualmente atractivos e imiten a los observados en la naturaleza. </p>
-							<div class="fragment">
+							<br>
+							<div class="fragment" data-fragment-index="2">
 								<iframe class = "ivideo"  data-src="videos/unconstrained.mp4" type="video/mp4">
 								</iframe>
 							</div>
-							<p class="fragment" style="margin-right: 5%;"><b>Inconveniente:</b> Existen múltiples soluciones para resolver el problema de cinemática inversa. </p>
 						</div>
 						<div style="text-align: justify; float : left; width : 50%" class=embed-container >
-							<p class="fragment" style="margin-right: 5%;"> <b>Solución:</b> Limitar el movimiento de las articulaciones mediante restricciones simples y eficientes.</p>
 							<br>
-							<div class="fragment">
+							<div class="fragment" data-fragment-index="2">
 								<iframe class = "ivideo"  data-src="videos/constrained.mp4" type="video/mp4">
 								</iframe>
 							</div>
-							<p class="fragment" style="margin-right: 5%;"> Cada vez que una articulación rota debe verificarse que se mantiene dentro de la región factible.</p>
 						</div>
+						<p class="fragment" data-fragment-index="2" style="margin-right: 5%;"><b>Inconveniente:</b> Existen múltiples soluciones para resolver el problema de cinemática inversa. </p>
+						<p class="fragment" data-fragment-index="2" style="margin-right: 5%;"> <b>Solución:</b> Limitar el movimiento de las articulaciones mediante restricciones simples y eficientes.</p>
+
 					</section>
 
 					<section>
@@ -536,23 +534,22 @@
 
 					<section>
 						<h3> Division de la estructura articulada </h3>
-						<div style="text-align: justify; float: left; width: 50%">
-							<p class="fragment" style="margin-right: 5%;"> <b>Algoritmo recursivo:</b> Se visitan todas las articulaciones con una búsqueda en profundidad. Si una articulación tiene más de un hijo debe crearse una nueva cadena.</p>
-							<div class="fragment" >
+						<div class="fragment" data-fragment-index="1" style="text-align: justify; float: left; width: 50%">
+							<p style="margin-right: 5%;"> <b>Algoritmo recursivo:</b> Se visitan todas las articulaciones con una búsqueda en profundidad. Si una articulación tiene más de un hijo debe crearse una nueva cadena.</p>
+							<div>
 								<iframe class = "ivideo"  data-src="videos/GHIK_subdivision.mp4" type="video/mp4">
 								</iframe>
 							</div>
 						</div>
 						<div style="text-align: center; float : left; width : 50%" class=embed-container >
-							<div class="fragment" data-fragment-index="3">
-								<p class="fragment" style="text-align: justify;"> Sólo las cadenas externas tienen objetivos asociados. Se utiliza esta información para determinar los objetivos de las cadenas internas.</p>
-								<div class="fragment">
-									
+							<div class="fragment" data-fragment-index="2">
+								<p style="text-align: justify;"> Sólo las cadenas externas tienen objetivos asociados. Se utiliza esta información para determinar los objetivos de las cadenas internas.</p>
+								<div>
 								<img data-src='fig/GHIKSkeleton.png' style="height: 60vh; margin-top: 0%;"/>
 								</div>
 							</div>
 						</div>
-						<p class="fragment">Finalmente, se aplica el algoritmo GHIK para cadenas cinemáticas sobre las cadenas obtenidas.</p>
+						<p class="fragment" data-fragment-index="3">Finalmente, se aplica el algoritmo GHIK para cadenas cinemáticas sobre las cadenas obtenidas.</p>
 					</section>
 
 					<!--
